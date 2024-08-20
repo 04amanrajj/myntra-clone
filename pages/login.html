@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="../Styles/style.css" />
+  </head>
+  <style>
+    body {
+      background-color: #fdedf0;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    #info {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: calc(100vh - 60px); /* Adjust based on navbar height */
+    }
+
+    #info form {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+    }
+
+    #info form label {
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+      display: block;
+      text-align: left;
+      /* margin-bottom: 100px; */
+    }
+
+    #info form input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+
+    #info form input[type="submit"] {
+      background-color: #ff3f6c;
+      color: white;
+      border: none;
+      width: 100%;
+      padding: 10px 20px;
+      /* border-radius: 5px; */
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    #info form input[type="submit"]:hover {
+      background-color: #d81b60;
+    }
+
+    #info form p {
+      font-size: 14px;
+      color: #666;
+      margin-top: 10px;
+    }
+
+    #info form a {
+      color: #f43397;
+      text-decoration: none;
+    }
+
+    #info form a:hover {
+      text-decoration: underline;
+    }
+  </style>
+  <body>
+    <!-- navbar -->
+    <header id="navbar">
+      <div class="left">
+        <a href="../index.html"
+          ><img src="../images/logo/main-logo.png" alt="Myntra Logo"
+        /></a>
+        <a href="./men.html">MEN</a>
+        <a href="./women.html">WOMEN</a>
+        <p>KIDS</p>
+        <p>HOME & LIVING</p>
+        <p>BEAUTY</p>
+        <p>STUDIO</p>
+      </div>
+      <div class="right">
+        <input type="text" placeholder="Search for products,brands and more" />
+        <a class="username" href="login.html">Login</a>
+        <a href="wishlist.html">Wishlist</a>
+        <a href="cart.html">Bag</a>
+      </div>
+    </header>
+    <div id="info">
+      <form>
+        <label><strong>Login</strong> or <strong>Signup</strong></label> <br />
+        <input
+          type="number"
+          id="userNumber"
+          placeholder="Mobile Number"
+          required
+        />
+        <br />
+        <p>
+          By continuing, I agree to the <a href="#">Terms of Use</a> &
+          <a href="#">Privacy Policy</a>
+        </p>
+        <input type="submit" />
+        <p>Have trouble logging in? <a href="#">Get help</a></p>
+      </form>
+    </div>
+  </body>
+</html>
+<script>
+  let form = document.querySelector("form");
+  form.addEventListener("submit", login);
+  let test = false;
+  let arr = [];
+  //   JSON.parse(localStorage.getItem("user")) || [];
+
+  function login(event) {
+    event.preventDefault();
+
+    let obj = {
+      number: form.userNumber.value,
+    };
+    arr.push(obj);
+    localStorage.setItem("user", JSON.stringify(arr));
+
+    let person = prompt("Enter OTP");
+    if (person == "1234") {
+      setTimeout(() => {
+        alert("Account Created successfully");
+        test = true;
+        document.querySelector(".username").textContent = "User";
+      }, 2000);
+    } else setTimeout(() => alert("OTP incorrect"), 2000);
+  }
+</script>
