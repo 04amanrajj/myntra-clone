@@ -112,15 +112,3 @@ body {
     font-size: 1.2em;
   }
 }
-
-.slick-dots {
-  bottom: -45px;
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  padding: 0;
-  width: 100%;
-  border: none;
-  background-color: white;
-}
