@@ -1,16 +1,5 @@
-html {
-    font-family: sans-serif;
-    -ms-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%
-}
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'arial', sans-serif;
   line-height: 1.6;
 }
 
@@ -48,7 +37,8 @@ body {
 
 #footer {
   background-color: #f1f1f1;
-  padding: 20px 15%;
+  padding: 20px 20%;
+  font-size: 12px;
 }
 .top-part img {
   width: 150px;
@@ -72,16 +62,16 @@ body {
   padding: 20px 0;
 }
 
-.desktop-popularSearch {
+.popular {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.popular + div {
   text-align: center;
 }
 
-.desktop-pSearchTitle {
-  font-size: 1.5em;
-  margin-bottom: 10px;
-}
-
-.desktop-fInfoSection {
+.infoSection {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -107,7 +97,7 @@ body {
     flex-direction: column;
   }
 
-  .desktop-fInfoSection {
+  .infoSection {
     flex-direction: column;
     text-align: center;
   }
@@ -121,8 +111,16 @@ body {
   .top-part h4 {
     font-size: 1.2em;
   }
+}
 
-  .desktop-pSearchTitle {
-    font-size: 1.2em;
-  }
+.slick-dots {
+  bottom: -45px;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 0;
+  width: 100%;
+  border: none;
+  background-color: white;
 }
