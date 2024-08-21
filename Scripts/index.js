@@ -1,9 +1,9 @@
 let images = [
-  "images/slideshow/Activewear_DK.jpg",
-  "images/slideshow/Handbags_Desk.jpg",
-  "images/slideshow/Western-Wear_Desk.jpg",
-  "images/slideshow/USPA_Desk_Banner.jpg",
-  "images/slideshow/Handbags_Desk2.jpg",
+  "images/slideshow/homepage/Activewear_DK.jpg",
+  "images/slideshow/homepage/Handbags_Desk.jpg",
+  "images/slideshow/homepage/Western-Wear_Desk.jpg",
+  "images/slideshow/homepage/USPA_Desk_Banner.jpg",
+  "images/slideshow/homepage/Handbags_Desk2.jpg",
 ];
 
 function slideshow(images){
