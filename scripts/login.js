@@ -51,5 +51,5 @@ function login(event) {
   }
 }
 // user name show in navbar
-import { isUserLoggedin } from '../utils/utils.js';
+import { isUserLoggedin } from "../utils/utils.js";
 isUserLoggedin();

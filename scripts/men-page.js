@@ -48,4 +48,4 @@ bottomImages.forEach((image) => {
 
 // user name show in navbar
 import { isUserLoggedin } from '../utils/utils.js';
-isUserLoggedin();
+isUserLoggedin()

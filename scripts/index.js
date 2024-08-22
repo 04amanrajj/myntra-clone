@@ -30,5 +30,6 @@ updateimg();
 
 slideshow(images)
 
-import { isUserLoggedin } from "../utils/utils.js";
+// user name show in navbar
+import { isUserLoggedin } from '../utils/utils.js';
 isUserLoggedin()
