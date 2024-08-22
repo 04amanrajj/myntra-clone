@@ -14,8 +14,8 @@
         <a href="../index.html"
           ><img src="../images/logo/main-logo.png" alt="Myntra Logo"
         /></a>
-        <a id="mens-page" href="">MEN</a>
-        <a id="womens-page" href="">WOMEN</a>
+        <a id="mens-page" href="../pages/men-page.html">MEN</a>
+        <a id="womens-page" href="../pages/women-page.html">WOMEN</a>
         <p>KIDS</p>
         <p>HOME & LIVING</p>
         <p>BEAUTY</p>
@@ -31,13 +31,8 @@
     <div id="info">
       <form>
         <label><strong>Login</strong> or <strong>Signup</strong></label> <br />
-        <input
-          type="number"
-          id="userNumber"
-          placeholder="Mobile Number"
-          required
-          minlength="10"
-        />
+        <input type="text" id="username" placeholder="Enter name" required />
+        <input type="text" id="userpass" placeholder="Enter password" required/>
         <br />
         <p>
           By continuing, I agree to the <a href="#">Terms of Use</a> &
@@ -49,4 +44,5 @@
     </div>
   </body>
 </html>
-<script src="../scripts/login.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="module" src="../scripts/login.js"></script>

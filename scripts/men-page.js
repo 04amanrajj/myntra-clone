@@ -17,7 +17,7 @@ function slideshow(images) {
     imgdiv.innerHTML = "";
     let pic = document.createElement("img");
     pic.src = images[i];
-    pic.setAttribute("id","imgTag")
+    // pic.setAttribute("id","slideimg")
     imgdiv.append(pic);
   }
   if (!interval) {
