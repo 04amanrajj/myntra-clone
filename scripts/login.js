@@ -11,46 +11,45 @@ function login(event) {
     userpass: form.userpass.value,
   };
 
-  let found = false;
-  arr.forEach((element) => {
-    if (obj.username == element.username && obj.userpass == element.userpass) {
-      return (found = true);
-    }
-  });
-  if (found) {
-     (params) => {
-      document.querySelector(".username").textContent = element.username;
-    }
-    
+  let foundUser = arr.find(
+    (element) =>
+      obj.username == element.username && obj.userpass == element.userpass
+  );
+
+  if (foundUser) {
+    localStorage.setItem("loggedInUser", foundUser.username);
+    // document.querySelector(".username").textContent = foundUser.username;
     alert("welcome back " + obj.username);
     window.location.href = "men-page.html";
   } else {
-    const { value: formValues } = Swal.fire({
-      title: "Create new Account",
-      html: `
+    Swal.fire("Looks like you are new. Let's create an account");
+    setTimeout(() => {
+      Swal.fire({
+        title: "Create new Account",
+        html: `
             <input placeholder="Enter name" id="newusername" class="swal2-input" required>
             <input placeholder="Enter password" id="newpassword" class="swal2-input">
           `,
-      focusConfirm: false,
-      preConfirm: () => {
-        let username = document.getElementById("newusername").value;
-        let userpass = document.getElementById("newpassword").value;
+        focusConfirm: false,
+        preConfirm: () => {
+          let username = document.getElementById("newusername").value;
+          let userpass = document.getElementById("newpassword").value;
 
-        let obj = {
-          username: username,
-          userpass: userpass,
-        };
-        if (username == "" || userpass == "")
-          return alert("your name or password is ' '?");
-        else {
-          arr.push(obj);
-          localStorage.setItem("users", JSON.stringify(arr));
+          if (username == "" || userpass == "") {
+            alert("Your name or password cannot be empty");
+            return false;
+          } else {
+            let newUser = { username, userpass };
+            arr.push(newUser);
+            localStorage.setItem("users", JSON.stringify(arr));
 
-          Swal.fire("Now you can login");
-        }
-      },
-    });
+            Swal.fire("Now you can log in");
+          }
+        },
+      });
+    }, 3000);
   }
 }
-
-export { testlogin };
+// user name show in navbar
+import { isUserLoggedin } from '../utils/utils.js';
+isUserLoggedin();

@@ -30,3 +30,5 @@ updateimg();
 
 slideshow(images)
 
+import { isUserLoggedin } from "../utils/utils.js";
+isUserLoggedin()

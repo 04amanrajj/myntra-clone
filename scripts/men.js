@@ -29,4 +29,8 @@ async function getData() {
 console.log(Swal);
 getData();
 
+// user name show in navbar
+import { isUserLoggedin } from "../utils/utils.js";
+isUserLoggedin()
+
 

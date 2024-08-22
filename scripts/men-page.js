@@ -17,8 +17,12 @@ function slideshow(images) {
     imgdiv.innerHTML = "";
     let pic = document.createElement("img");
     pic.src = images[i];
-    // pic.setAttribute("id","slideimg")
+    pic.setAttribute("id", "slideimg");
     imgdiv.append(pic);
+    pic.addEventListener(
+      "click",
+      () => (window.location.href = "men-item.html")
+    );
   }
   if (!interval) {
     interval = setInterval(() => {
@@ -31,6 +35,17 @@ function slideshow(images) {
 }
 
 slideshow(images);
-let main = document.querySelector("#imgTag");
-main.addEventListener("click", () => (window.location.href = "men-item.html"));
-console.log(main);
+
+// redirect to mens page on img click
+let bottomImages = document.querySelectorAll("#Main .bimgs");
+bottomImages.forEach((image) => {
+  image.addEventListener(
+    "click",
+    () => (window.location.href = "men-item.html")
+  );
+});
+
+
+// user name show in navbar
+import { isUserLoggedin } from '../utils/utils.js';
+isUserLoggedin();
