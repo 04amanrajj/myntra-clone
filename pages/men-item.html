@@ -26,7 +26,13 @@
         <p>STUDIO</p>
       </div>
       <div class="right">
-        <input type="text" placeholder="Search for products,brands and more" />
+        <input
+          type="text"
+          id="product"
+          
+          placeholder="Search for products,brands and more"
+        />
+        <button>Search</button>
         <a class="username" href="login.html">Login</a>
         <a href="wishlist.html">Wishlist</a>
         <a href="cart.html">Bag</a>
@@ -36,17 +42,33 @@
     <!-- Main -->
     <div id="Main">
       <div class="filter">
+        <h2>Filters</h2>
+        <hr />
+        <div>
+          <label for="men">
+            <input type="radio" id="men" name="gender" value="men" />
+            Men
+          </label>
+          <label for="women">
+            <input type="radio" id="women" name="gender" value="women" />
+            Women
+          </label>
+        </div>
         <div>
           <strong>CATEGORIES</strong><br />
           <input type="checkbox" id="Shirt" />Shirts <br />
           <input type="checkbox" id="Trousers" />Trousers <br />
         </div>
+        <hr />
         <div>
           <strong>BRAND</strong> <br />
-          <input type="checkbox" id="THE BEAR HOUSE" />THE BEAR HOUSE <br />
-          <input type="checkbox" id="Park Avenue" />Park Avenue <br />
+          <input type="checkbox" id="THE BEAR HOUSE" />THE
+          BEAR HOUSE <br />
+          <input type="checkbox" id="Park Avenue" />Park
+          Avenue <br />
           <input type="checkbox" id="Raymond" />Raymond
         </div>
+        <hr />
         <div><strong>PRICE</strong></div>
         <select id="priceSort">
           <option value="">Relative</option>
@@ -54,7 +76,7 @@
           <option value="high to low">High To Low</option>
         </select>
       </div>
-      <div class="products">asd</div>
+      <div class="products"></div>
     </div>
     <!-- footer -->
 
