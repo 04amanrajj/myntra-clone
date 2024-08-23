@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SHOPPING BAG</title>
+    <link rel="stylesheet" href="/styles/bag.css" />
+  </head>
+  <body>
+    <header id="navbar">
+      <div class="left">
+        <a href="/index.html">
+          <img src="/images/logo/main-logo.png" alt="Myntra Logo" />
+        </a>
+      </div>
+      <div class="mid">
+        <ol class="checkout-steps">
+          <li class="step step1 active">BAG</li>
+          <li class="divider"></li>
+          <li class="step step2">ADDRESS</li>
+          <li class="divider"></li>
+          <li class="step step3">PAYMENT</li>
+        </ol>
+      </div>
+      <div class="right">
+        <div class="secureContainer">
+          <img
+            src="https://constant.myntassets.com/checkout/assets/img/sprite-secure.png"
+            class="secureIcon"
+            width="26"
+            height="28"
+            alt="Secure"
+          />
+          <div class="secure">100% SECURE</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main -->
+    <div id="container">
+      <div class="product"></div>
+      <div class="bill"></div>
+    </div>
+  </body>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="module" src="/scripts/bag.js"></script>
