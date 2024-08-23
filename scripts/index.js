@@ -6,30 +6,43 @@ let images = [
   "images/slideshow/homepage/Handbags_Desk2.jpg",
 ];
 
-function slideshow(images){
-    let i = 0;
-let interval = false;
+function slideshow(images) {
+  let i = 0;
+  let interval = false;
 
-let imgdiv = document.querySelector(".slideshow");
+  let imgdiv = document.querySelector(".slideshow");
 
-function updateimg() {
-  imgdiv.innerHTML = "";
-  let pic = document.createElement("img");
-  pic.src = images[i];
-  imgdiv.append(pic);
-}
-if (!interval) {
-  interval = setInterval(() => {
-    i++;
-    if (i == images.length) i = 0;
-    updateimg();
-  }, 5000);
-}
-updateimg();
+  function updateimg() {
+    imgdiv.innerHTML = "";
+    let pic = document.createElement("img");
+    pic.src = images[i];
+    imgdiv.append(pic);
+    pic.addEventListener(
+      "click",
+      () => (window.location.href = "./pages/shop.html")
+    );
+  }
+  if (!interval) {
+    interval = setInterval(() => {
+      i++;
+      if (i == images.length) i = 0;
+      updateimg();
+    }, 5000);
+  }
+  updateimg();
 }
 
-slideshow(images)
+slideshow(images);
+
+// redirect to mens page on img click
+let bottomImages = document.querySelectorAll("#Main .bimgs");
+bottomImages.forEach((image) => {
+  image.addEventListener(
+    "click",
+    () => (window.location.href = "./pages/shop.html")
+  );
+});
 
 // user name show in navbar
-import { isUserLoggedin } from '../utils/utils.js';
-isUserLoggedin()
+import { isUserLoggedin } from "../utils/utils.js";
+isUserLoggedin();
