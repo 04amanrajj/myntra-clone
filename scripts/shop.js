@@ -19,7 +19,7 @@ async function getData() {
   try {
     let data = await fetch(dataURL);
     data = await data.json();
-    bag = data;
+    bag = randomArray(data);
     displayProduct(bag);
 
     tostBottomEnd.fire({
@@ -36,6 +36,15 @@ async function getData() {
   }
 }
 getData();
+
+// random product
+function randomArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
 
 // display product
 function displayProduct(data) {
@@ -56,8 +65,10 @@ function displayProduct(data) {
 
     let price = document.createElement("p");
     price.textContent =
+      "Rs " +
       element.discountedPrice +
       " " +
+      "Rs " +
       element.strike +
       " " +
       element.discountPercentage;
@@ -80,5 +91,35 @@ function displayProduct(data) {
   });
 }
 
+//filter
+function applyFilters() {
+  // gender
+  let gender =
+    document.querySelector('input[name="gender"]:checked')?.value || "All";
+
+  // price sort
+  let priceSort = document.getElementById("priceSort").value;
+
+  let filteredData = bag;
+
+  if (gender != "All") {
+    filteredData = filteredData.filter((element) => element.gender == gender);
+  }
+
+  if (priceSort === "low to high") {
+    filteredData.sort((a, b) => a.discountedPrice - b.discountedPrice);
+  } else if (priceSort === "high to low") {
+    filteredData.sort((a, b) => b.discountedPrice - a.discountedPrice);
+  }
+
+  displayProduct(filteredData);
+}
+
+document
+  .querySelector(".filter button")
+  .addEventListener("click", applyFilters);
+document.querySelector(".resetF").addEventListener("click", () => {
+  displayProduct(bag);
+});
 // user name show in navbar
 isUserLoggedin();

@@ -321,14 +321,19 @@
     <div id="Main">
       <div class="filter">
         <h2>Filters</h2>
+        <button>Apply</button><button type="reset">Reset</button>
         <hr />
-        <div>
+        <div id="genders">
           <label for="men">
-            <input type="radio" id="men" name="gender" value="men" />
+            <input type="radio" id="all" name="gender" value="" />
+            All
+          </label>
+          <label for="men">
+            <input type="radio" id="men" name="gender" value="male" />
             Men
           </label>
           <label for="women">
-            <input type="radio" id="women" name="gender" value="women" />
+            <input type="radio" id="women" name="gender" value="female" />
             Women
           </label>
         </div>
