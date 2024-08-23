@@ -5,12 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Myntra</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap"
       rel="stylesheet"
     />
-
     <link rel="stylesheet" href="../styles/navbar-footer.css" />
-    <link rel="stylesheet" href="../styles/menPage.css" />
+    <link rel="stylesheet" href="../styles/men.css" />
   </head>
   <body>
     <!-- navbar -->
@@ -320,100 +319,207 @@
 
     <!-- Main -->
     <div id="Main">
-      <!-- slideshow -->
-      <div class="slideshow"></div>
-      <ul class="slick-dots">
-        <li><button></button></li>
-        <li><button></button></li>
-        <li><button></button></li>
-        <li><button></button></li>
-        <li><button></button></li>
-      </ul>
-
-      <!-- banners -->
-      <h4>Biggest Deals On Top Brands</h4>
-      <div class="items-row">
-        <img class="bimgs" src="../images/rows/menPage/1.webp" alt="" />
-        <img class="bimgs" src="../images/rows/menPage/2.webp" alt="" />
-        <img class="bimgs" src="../images/rows/menPage/3.webp" alt="" />
-        <img class="bimgs" src="../images/rows/menPage/4.webp" alt="" />
+      <div class="filter">
+        <h2>Filters</h2>
+        <hr />
+        <div>
+          <label for="men">
+            <input type="radio" id="men" name="gender" value="men" />
+            Men
+          </label>
+          <label for="women">
+            <input type="radio" id="women" name="gender" value="women" />
+            Women
+          </label>
+        </div>
+        <div>
+          <strong>CATEGORIES</strong><br />
+          <input type="checkbox" id="Shirt" />Shirts <br />
+          <input type="checkbox" id="Trousers" />Trousers <br />
+        </div>
+        <hr />
+        <div>
+          <strong>BRAND</strong> <br />
+          <input type="checkbox" id="THE BEAR HOUSE" />THE
+          BEAR HOUSE <br />
+          <input type="checkbox" id="Park Avenue" />Park
+          Avenue <br />
+          <input type="checkbox" id="Raymond" />Raymond
+        </div>
+        <hr />
+        <div><strong>PRICE</strong></div>
+        <select id="priceSort">
+          <option value="">Relative</option>
+          <option value="low to high">Low To High</option>
+          <option value="high to low">High To Low</option>
+        </select>
       </div>
-      <div class="items-row">
-        <img class="bimgs" src="../images/rows/menPage/a1.webp" alt="" />
-        <img class="bimgs" src="../images/rows/menPage/a2.webp" alt="" />
-        <img class="bimgs" src="../images/rows/menPage/a3.webp" alt="" />
-        <img class="bimgs" src="../images/rows/menPage/a4.webp" alt="" />
-      </div>
-      <h4>Categories To Bag</h4>
-      <div class="six-item">
-        <img class="bimgs" src="../images/rows/menPage/b1.webp" alt="" />
-        <img class="bimgs" src="../images/rows/menPage/b2.webp" alt="" />
-        <img class="bimgs" src="../images/rows/menPage/b3.webp" alt="" />
-        <img class="bimgs" src="../images/rows/menPage/b4.webp" alt="" />
-        <img class="bimgs" src="../images/rows/menPage/b5.webp" alt="" />
-        <img class="bimgs" src="../images/rows/menPage/b6.webp" alt="" />
-      </div>
-      <h4>Explore Top Brands</h4>
-      <div class="five-item">
-        <img class="bimgs" src="../images/rows/menPage/c1.jpg" alt="" />
-        <img class="bimgs" src="../images/rows/menPage/c2.jpg" alt="" />
-        <img class="bimgs" src="../images/rows/menPage/c3.jpg" alt="" />
-        <img class="bimgs" src="../images/rows/menPage/c4.jpg" alt="" />
-        <img class="bimgs" src="../images/rows/menPage/c5.jpg" alt="" />
-      </div>
-      <h4>Myntra Luxe</h4>
-      <div class="six-item">
-        <img class="bimgs" src="../images/rows/menPage/d1.jpg" alt="" />
-        <img class="bimgs" src="../images/rows/menPage/d2.jpg" alt="" />
-        <img class="bimgs" src="../images/rows/menPage/d3.jpg" alt="" />
-        <img class="bimgs" src="../images/rows/menPage/d4.jpg" alt="" />
-        <img class="bimgs" src="../images/rows/menPage/d5.jpg" alt="" />
-        <img class="bimgs" src="../images/rows/menPage/d6.jpg" alt="" />
-      </div>
-      <h4>Trending In Indian Wear</h4>
-      <div class="five-item">
-        <img class="bimgs" src="../images/rows/menPage/e1.jpg" alt="" />
-        <img class="bimgs" src="../images/rows/menPage/e2.jpg" alt="" />
-        <img class="bimgs" src="../images/rows/menPage/e3.jpg" alt="" />
-        <img class="bimgs" src="../images/rows/menPage/e4.jpg" alt="" />
-        <img class="bimgs" src="../images/rows/menPage/e5.jpg" alt="" />
-        <img class="bimgs" src="../images/rows/menPage/" alt="" />
-      </div>
-      <h4>Trending In Sports Wear</h4>
-      <div class="five-item">
-        <img class="bimgs" src="../images/rows/menPage/f1.jpeg" alt="" />
-        <img class="bimgs" src="../images/rows/menPage/f2.jpeg" alt="" />
-        <img class="bimgs" src="../images/rows/menPage/f3.jpeg" alt="" />
-        <img class="bimgs" src="../images/rows/menPage/f4.jpeg" alt="" />
-        <img class="bimgs" src="../images/rows/menPage/f5.jpeg" alt="" />
-        <img class="bimgs" src="../images/rows/menPage/" alt="" />
-      </div>
-      <h4>Trending In Footwear</h4>
-      <div class="five-item">
-        <img class="bimgs" src="../images/rows/menPage/g1.jpg" alt="" />
-        <img class="bimgs" src="../images/rows/menPage/g2.jpg" alt="" />
-        <img class="bimgs" src="../images/rows/menPage/g3.jpg" alt="" />
-        <img class="bimgs" src="../images/rows/menPage/g4.jpeg" alt="" />
-        <img class="bimgs" src="../images/rows/menPage/g5.jpg" alt="" />
-        <img class="bimgs" src="../images/rows/menPage/" alt="" />
-      </div>
-      <h4>Trending In Accessories</h4>
-      <div class="five-item">
-        <img class="bimgs" src="../images/rows/menPage/h1.jpg" alt="" />
-        <img class="bimgs" src="../images/rows/menPage/h2.jpg" alt="" />
-        <img class="bimgs" src="../images/rows/menPage/h3.jpeg" alt="" />
-        <img class="bimgs" src="../images/rows/menPage/h4.jpeg" alt="" />
-        <img class="bimgs" src="../images/rows/menPage/h5.jpeg" alt="" />
-      </div>
+      <div class="products"></div>
     </div>
     <!-- footer -->
+
     <footer id="footer">
+      <div class="meninfo">
+        <div class="extra">
+          <h2>BUY MEN'S FASHION STORE</h2>
+
+          <h3>
+            <strong> MEN'S FASHION AT MYNTRA: SIMPLY IRRESISTIBLE </strong>
+          </h3>
+
+          <p></p>
+          <p>
+            Stylish, trendy, smart, sophisticated - these are just some words to
+            describe the men's fashion products at Myntra. We are host to a fine
+            line of products that are of the latest in fashion for men. Our
+            men's fashion collection features apparel, shoes, accessories,
+            personal care products and more, suitable for all occasions. If you
+            are looking for great brands of men's fashion clothing, footwear or
+            accessories, we offer you the best price products, which makes
+            online shopping simply irresistible.
+          </p>
+          <p>
+            <strong>
+              MEN'S FASHION CLOTHING, ACCESSORIES, FOOTWEAR AND MORE
+            </strong>
+          </p>
+          <p>
+            In keeping with the latest in men's fashion trends, Myntra brings
+            you an amazing variety of products. Our online store is regularly
+            updated with new fashion categories for men. Therefore, look no
+            further, for Myntra is the undeniable leader of men's fashion
+            online. Check out our amazing product range from the best men's
+            fashion brands and find your favourites.
+          </p>
+          <ol>
+            <p></p>
+            <li>
+              Our men's casual wear section meets your needs to look cool and
+              laid-back. The next time you head out for a fun outing make sure
+              you are dressed in smart T-shirts or casual shirts. Pair them with
+              cool jeans or trousers. Arrive with a bang in bomber or biker
+              jackets. Bring on your high-street men's casual fashion to
+              college, with varsity or puffer jackets worn with casual shoes
+              like sneakers, loafers or boat shoes. Opt for a trendy pair of
+              sunglasses with shorts and flip-flops to the beach. Wear
+              waterproof digital watches and you can look stylish even
+              bare-chested!
+            </li>
+            <p></p>
+            <p></p>
+            <li>
+              It is time to look fit and trendy with our sports and activewear
+              collection for men. Wear a good pair of running shoes, a hooded
+              sporty jacket and track pants for your regular fitness schedule.
+              You can also pick up sports shoes for specific training needs such
+              as for basketball and skating. Stay comfortable in summers with
+              shorts and sports sandals. Our winter wear men's outfits also make
+              for great men's casual fashion. You can buy sweaters and
+              sweatshirts updated with new fashion trends for men.
+            </li>
+            <p></p>
+            <p></p>
+            <li>
+              Check out our fabulous men's outfits for festive occasions and
+              formal wear. Look dapper at weddings with our smart kurtas and
+              kurta sets. Opt for ethnic sandals and mojaris to complete your
+              look. Look sharp and sophisticated at work with our shirts in
+              stripes, solids or checks. Wear them with formal trousers, and
+              blazers or suits, as the occasion demands. Choose stylish derbies,
+              brogues and oxfords from our formal shoes' collection. Choose
+              smart wallets, backpacks and bags to carry your belongings in
+              style.
+            </li>
+            <p></p>
+          </ol>
+          <p>
+            <strong> </strong>
+          </p>
+          <h3><strong> MEN'S FASHION ONLINE AT MYNTRA </strong></h3>
+
+          <p></p>
+          <p>
+            You can buy products of the latest in fashion for men in absolute
+            convenience at Myntra. Shop online at Myntra and you can easily
+            avoid crowded shops, long billing queues and chaos at the parking
+            lot. Our shopping and payment procedures have been simplified for
+            ease of use. View the latest in men's fashion trends with price
+            options for the best brands under one roof. Choose your favourites
+            and catapult yourself to the high streets of fashion.
+          </p>
+        </div>
+        <div class="price">
+          <h2>MEN'S FASHION STORE PRICE LIST</h2>
+          <table style="margin-top: 40px">
+            <thead>
+              <tr>
+                <th>Men's Fashion Store</th>
+                <th>PRICE (RS)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  THE BEAR HOUSE Men Maroon & Grey Slim Fit Solid Casual Shirt
+                </td>
+                <td>Rs. 1247</td>
+              </tr>
+              <tr>
+                <td>THE BEAR HOUSE Men Blue Slim Fit Striped Casual Shirt</td>
+                <td>Rs. 1247</td>
+              </tr>
+              <tr>
+                <td>
+                  Park Avenue Self Design Textured Slim Fit Opaque Formal Shirt
+                </td>
+                <td>Rs. 809</td>
+              </tr>
+              <tr>
+                <td>Park Avenue Self Design Slim Fit Opaque Formal Shirt</td>
+                <td>Rs. 764</td>
+              </tr>
+              <tr>
+                <td>THE BEAR HOUSE V-Neck Colourblocked Sweatshirt</td>
+                <td>Rs. 1924</td>
+              </tr>
+              <tr>
+                <td>Park Avenue Slim Fit Formal Shirt</td>
+                <td>Rs. 764</td>
+              </tr>
+              <tr>
+                <td>
+                  Park Avenue Slim Fit Cutaway Collar Pure Cotton Formal Shirt
+                </td>
+                <td>Rs. 899</td>
+              </tr>
+              <tr>
+                <td>
+                  Raymond Pure Cotton Slim Fit Opaque Micro Ditsy Printed Formal
+                  Shirt
+                </td>
+                <td>Rs. 1149</td>
+              </tr>
+              <tr>
+                <td>Raymond Slim Fit Opaque Pure Cotton Formal Shirt</td>
+                <td>Rs. 1149</td>
+              </tr>
+              <tr>
+                <td>Raymond Pure Cotton Slim Fit Formal Shirt</td>
+                <td>Rs. 1049</td>
+              </tr>
+            </tbody>
+          </table>
+          <div>
+            <i><strong>Data last updated on 20/08/2024</strong></i>
+          </div>
+        </div>
+      </div>
       <div class="top-part">
         <div>
           <h4>ONLINE SHOPPING</h4>
           <ul>
-            <li><a href="pages/men-page.html">Men</a></li>
-            <li><a href="pages/women-page.html">Women</a></li>
+            <li><a href="/pages/men-page.html">Men</a></li>
+            <li><a href="/pages/women-page.html">Women</a></li>
             <li>Kids</li>
             <li>Home & Living</li>
             <li>Beauty</li>
@@ -475,16 +581,19 @@
             alt="Facebook"
             style="width: 20px; height: 20px"
           />
+
           <img
             src="https://constant.myntassets.com/web/assets/img/f10bc513-c5a4-490c-9a9c-eb7a3cc8252b1574604275383-twitter.png"
             alt="Twitter"
             style="width: 20px; height: 20px"
           />
+
           <img
             src="https://constant.myntassets.com/web/assets/img/a7e3c86e-566a-44a6-a733-179389dd87111574604275355-yt.png"
             alt="YouTube"
             style="width: 28px; height: 20px"
           />
+
           <img
             src="https://constant.myntassets.com/web/assets/img/b4fcca19-5fc1-4199-93ca-4cae3210ef7f1574604275408-insta.png"
             alt="Instagram"
@@ -508,7 +617,6 @@
           <div class="section">
             <div class="return">
               <img
-                id="imgTag"
                 src="https://assets.myntassets.com/assets/images/retaillabs/2023/5/22/becb1b16-86cc-4e78-bdc7-7801c17947831684737106127-Return-Window-image.png"
                 alt="Return"
                 style="width: 48px; height: 49px"
@@ -547,106 +655,8 @@
 
         <a href="https://www.flipkart.com/"> A Flipkart company </a>
       </div>
-      <hr />
-      <address class="address">
-        <div>
-          <strong>Registered Office Address</strong> <br /><br />
-          Buildings Alyssa,<br />
-          Begonia and Clover situated in Embassy Tech Village,<br />
-          Outer Ring Road,<br />
-          Devarabeesanahalli Village,<br />
-          Varthur Hobli,<br />
-          Bengaluru - 560103, India
-        </div>
-        <div>
-          <p>CIN: U72300KA2007PTC041799</p>
-          <p>Telephone: +91-80-61561999</p>
-        </div>
-      </address>
-      <hr />
-      <!-- bottom section -->
-      <div class="bottom">
-        <h1>
-          <strong>MEN'S SHOPPING AT MYNTRA: A SUPERIOR EXPERIENCE </strong>
-        </h1>
-        <p>
-          Myntra is one of the best sites when it comes to online shopping for
-          men. The finest of material, superior design and unbeatable style go
-          into the making of our men's shopping collection. Our range of online
-          shopping men's wear, accessories, footwear and personal care products
-          are second to none. Compared with other men's shopping sites, Myntra
-          brings you the best price products which won't hurt your pocket. With
-          seasonal discounts on trendy casual wear, suits, blazers, sneakers and
-          more, online shopping for men at Myntra just gets even more
-          irresistible!
-        </p>
-        <h3><strong>ONLINE SHOPPING FOR MEN: OPTIONS UNLIMITED </strong></h3>
-        <p>
-          At Myntra, our online shopping fashion for men collection features
-          plenty of options to create multiple outfits. At our men's online shop
-          we have brought together an exhaustive range of products from the best
-          men's brands. Here is a list of must-haves from the wide variety of
-          awesome products at Myntra:
-        </p>
-        <ul>
-          <li>
-            Opt for a charming yet laid-back look with cool
-            <strong>T-shirts</strong> and casual shirts worn with stylish jeans,
-            casual trousers or shorts. Stay sharp and sophisticated with our
-            smart options in formal shirts and trousers. Look dapper when
-            meeting your clients in our smooth suits. Put on trendy blazers for
-            formal occasions. On your online men's clothes' shopping journey,
-            make sure you include kurtas, jackets and sherwanis from our festive
-            wear collection. Stay warm and comfortable in sweaters and
-            sweatshirts. Get fit and ready for adventure, with our sports and
-            active wear collection.
-          </li>
-          <li>
-            Once you are done with your online men's clothes' shopping, make
-            sure you pick up the right accessories to complement your look.
-            Whether you are travelling to work or outside the city our wide
-            variety of bags, backpacks and luggage collection will ensure you
-            are well-packed. Our beautiful watches and smart watches work well
-            to enhance your overall style quotient. Reach out for our sunglasses
-            during the summers - let your eyes stay protected while you opt for
-            maximum swag.
-          </li>
-          <li>
-            Bring impeccable style to your shoe closet with our incredible
-            collection of footwear for men. Look classy during formal and
-            semi-formal occasions with derbies, loafers and oxfords. Stay hip
-            and happening in parties with boat shoes, monks and brogues from our
-            casual men's footwear range. Lead an active lifestyle with sneakers
-            and running shoes from our sports footwear selection. Pick up
-            sandals, floaters and flip-flops for a trip to the beach. We also
-            host socks in our men's online shopping collection. That's basically
-            everything under one roof!
-          </li>
-        </ul>
-        <p>
-          Make sure you check out fun printed men's T-shirts featuring your
-          favourite characters from DC Comics and Marvel studios. Relive the
-          magic of your favourite superhero from Justice League. Fly high with
-          Superman, battle the bad guys with Batman, or get trendy in
-          lightning-speed with a Flash T-shirt. Grab our cool Marvel Avengers
-          T-shirts . Stay powered up with the Iron Man, or walk with the
-          warriors in a Thor T-shirt.
-        </p>
-        <p>
-          Our online shopping fashion for mens collection includes even more
-          amazing merchandise such as innerwear, sleepwear, track pants,
-          personal care, wallets, belts and other fashion accessories.
-        </p>
-        <h3><strong>MEN'S SHOPPING MADE EASY AT MYNTRA </strong></h3>
-        <p>
-          Myntra is the most convenient men's online store, what with our
-          simplified shopping and payment procedures. With just a few clicks of
-          the mouse or taps on your smartphone, you can buy your favorites from
-          the best men's brands right away.
-        </p>
-      </div>
     </footer>
   </body>
 </html>
+<script type="module" src="../scripts/women.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script type="module" src="../scripts/women-page.js"></script>

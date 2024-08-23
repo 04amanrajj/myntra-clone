@@ -96,6 +96,8 @@
   gap: 0.5% 2%;
   width: 76%;
   margin-bottom: 10%;
+  overflow:scroll;
+  scrollbar-width: none;
 }
 
 .products div {
@@ -106,6 +108,8 @@
 .products div:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+
 
 .products img {
   width: 100%;

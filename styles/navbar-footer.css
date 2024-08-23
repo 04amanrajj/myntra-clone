@@ -70,12 +70,14 @@ body {
 
 .dropdown:hover .choose {
   /* min-height: 100px; */
-  min-width: 800px;
+  /* background-color: #333; */
+  /* color: #007bff; */
+  min-width: 80%;
   margin-top: auto;
-  padding: 10px;
+  /* padding: 10px; */
   display: grid;
   border-radius: 10px;
-  grid-template-columns: repeat(6,1fr);
+  grid-template-columns: repeat(5,1fr);
   
   
 }
