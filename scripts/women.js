@@ -1,4 +1,7 @@
-import { tostBottomEnd, isUserLoggedin } from "../utils/utils.js";
+import { tostTopEnd,tostBottomEnd, isUserLoggedin } from "../utils/utils.js";
+// user name show in navbar
+isUserLoggedin();
+
 let bag = [];
 
 document.querySelector("#product").addEventListener("input", search);
@@ -72,14 +75,28 @@ function displayProduct(data) {
       element.strike +
       " " +
       element.discountPercentage;
-
-    let wish = document.createElement("div");
+    let wish = document.createElement("button");
+    wish.textContent = "Wishlist";
+    wish.addEventListener("click", () => {
+      wishlist(element);
+    });
+    wish.setAttribute("class", "button");
 
     let discount = document.createElement("p");
     discount.textContent = element.discountPercentage;
 
-    card.append(img, product, brand, price);
+    card.append(img, wish, product, brand, price);
     document.querySelector(".products").append(card);
+  });
+}
+
+function wishlist(element) {
+  let arr = JSON.parse(localStorage.getItem("wishlist")) || [];
+  arr.push(element);
+  localStorage.setItem("wishlist", JSON.stringify(arr));
+  tostTopEnd.fire({
+    icon: "success",
+    title: "added to wishlist",
   });
 }
 
@@ -113,5 +130,4 @@ document
 document.querySelector(".resetF").addEventListener("click", () => {
   displayProduct(bag);
 });
-// user name show in navbar
-isUserLoggedin();
+

@@ -73,22 +73,25 @@ function displayProduct(data) {
       " " +
       element.discountPercentage;
 
-    let wish = document.createElement("div");
-    wish;
-    // price.setAttribute("class","price")
+      let wish = document.createElement("button");
+      wish.textContent="Wishlist"
+      wish.addEventListener("click",()=>{
+        wishlist(element)
+      })
+      wish.setAttribute("class","button")
+  
+      let discount = document.createElement("p");
+      discount.textContent = element.discountPercentage;
+  
+      card.append(img, wish,product, brand, price );
+      document.querySelector(".products").append(card);
+    });
+}
 
-    // let extraPrice = document.createElement("p");
-    // extraPrice.textContent = element.strike;
-
-    // let rating=document.createElement("p")
-    // rating.textContent=element.ratingsContainer
-
-    let discount = document.createElement("p");
-    discount.textContent = element.discountPercentage;
-
-    card.append(img, product, brand, price);
-    document.querySelector(".products").append(card);
-  });
+ function wishlist(element){
+  let arr= JSON.parse(localStorage.getItem("wishlist"))||[]
+  arr.push(element)
+  localStorage.setItem("wishlist",JSON.stringify(arr))
 }
 
 //filter
