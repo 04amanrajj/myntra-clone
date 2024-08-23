@@ -46,3 +46,9 @@ bottomImages.forEach((image) => {
 // user name show in navbar
 import { isUserLoggedin } from "../utils/utils.js";
 isUserLoggedin();
+
+// redirect to shop in input
+let input = document.querySelector("#product");
+input.addEventListener("input", () => {
+  window.location.href = "./pages/shop.html";
+});

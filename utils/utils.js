@@ -3,8 +3,6 @@ const filter = () => {
 };
 
 const search = () => {
-  
-
   return "search";
 };
 
@@ -54,5 +52,11 @@ function isUserLoggedin() {
     }
   });
 }
-
-export { tostTopEnd, tostBottomEnd, filter, search, isUserLoggedin };
+// redirect to shop
+function redirect() {
+  let input = document.querySelector("#product");
+  input.addEventListener("input", () => {
+    window.location.href = "shop.html";
+  });
+}
+export { tostTopEnd, tostBottomEnd, filter, search, isUserLoggedin, redirect };

@@ -47,5 +47,6 @@ bottomImages.forEach((image) => {
 
 
 // user name show in navbar
-import { isUserLoggedin } from '../utils/utils.js';
+import { redirect,isUserLoggedin } from '../utils/utils.js';
 isUserLoggedin()
+redirect()

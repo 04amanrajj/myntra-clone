@@ -1,6 +1,5 @@
 let form = document.querySelector("form");
 form.addEventListener("submit", login);
-let test = false;
 let arr = JSON.parse(localStorage.getItem("users")) || [];
 
 function login(event) {
@@ -51,5 +50,6 @@ function login(event) {
   }
 }
 // user name show in navbar
-import { isUserLoggedin } from "../utils/utils.js";
-isUserLoggedin();
+import { redirect,isUserLoggedin } from '../utils/utils.js';
+isUserLoggedin()
+redirect()

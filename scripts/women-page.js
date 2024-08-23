@@ -1,10 +1,10 @@
 let images = [
-  "../images/slideshow/womenPage/1.jpg",
-  "../images/slideshow/womenPage/1.jpg",
-  "../images/slideshow/womenPage/1.jpg",
-  "../images/slideshow/womenPage/1.jpg",
-  "../images/slideshow/womenPage/1.jpg",
-  "../images/slideshow/womenPage/1.jpg"
+  "../images/slideshow/womenPage/1.jpeg",
+  "../images/slideshow/womenPage/2.jpg",
+  "../images/slideshow/womenPage/3.jpg",
+  "../images/slideshow/womenPage/4.jpg",
+  "../images/slideshow/womenPage/5.jpg",
+  "../images/slideshow/womenPage/6.jpg"
 ];
 
 function slideshow(images) {
@@ -47,5 +47,7 @@ bottomImages.forEach((image) => {
 
 
 // user name show in navbar
-import { isUserLoggedin } from '../utils/utils.js';
+import { redirect,isUserLoggedin } from '../utils/utils.js';
 isUserLoggedin()
+redirect()
+
