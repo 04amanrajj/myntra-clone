@@ -1,10 +1,10 @@
 let images = [
-  "../images/slideshow/menPage/Workwear_Desk.jpg",
-  "../images/slideshow/menPage/Sports-Shoes_Desk2.jpg",
-  "../images/slideshow/menPage/Lancer_Desk.jpg",
-  "../images/slideshow/menPage/Sports-Shoes_Desk.jpg",
-  "../images/slideshow/menPage/CR7_Desk_Baner.jpg",
-  "../images/slideshow/menPage/Backpacks---Luggage_Desk.jpg",
+  "../images/slideshow/men-page/Workwear_Desk.jpg",
+  "../images/slideshow/men-page/Sports-Shoes_Desk2.jpg",
+  "../images/slideshow/men-page/Lancer_Desk.jpg",
+  "../images/slideshow/men-page/Sports-Shoes_Desk.jpg",
+  "../images/slideshow/men-page/CR7_Desk_Baner.jpg",
+  "../images/slideshow/men-page/Backpacks---Luggage_Desk.jpg",
 ];
 
 function slideshow(images) {
