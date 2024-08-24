@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SHOPPING BAG</title>
+    <link rel="stylesheet" href="/styles/bag.css" />
+  </head>
+  <body>
+    <header id="navbar">
+      <div class="left">
+        <a href="/index.html">
+          <img src="/images/logo/main-logo.png" alt="Myntra Logo" />
+        </a>
+      </div>
+      <div class="mid">
+        <ol class="checkout-steps">
+          <li class="step step1 active">BAG</li>
+          <li class="divider"></li>
+          <li class="step step2">ADDRESS</li>
+          <li class="divider"></li>
+          <li class="step step3">PAYMENT</li>
+        </ol>
+      </div>
+      <div class="right">
+        <div class="secureContainer">
+          <img
+            src="https://constant.myntassets.com/checkout/assets/img/sprite-secure.png"
+            class="secureIcon"
+            width="26"
+            height="28"
+            alt="Secure"
+          />
+          <div class="secure">100% SECURE</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main -->
+    <div class="price">
+      <h1>Your total is <span id="total">Nothing</span></h1>
+    </div>
+    <div id="container">
+      <div class="product"></div>
+      <div class="bill">
+        <div class="section-container">
+          <!-- Coupons Section -->
+          <div class="coupons-section">
+            <div class="section-header">Coupons</div>
+            <div class="section-content">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 18 18"
+                class="icon-coupon"
+              >
+                <g fill="none" transform="rotate(45 6.086 5.293)">
+                  <path
+                    stroke="#000"
+                    d="M17.5 10V1a1 1 0 0 0-1-1H5.495a1 1 0 0 0-.737.323l-4.136 4.5a1 1 0 0 0 0 1.354l4.136 4.5a1 1 0 0 0 .737.323H16.5a1 1 0 0 0 1-1z"
+                  ></path>
+                  <circle cx="5.35" cy="5.35" r="1.35" fill="#000"></circle>
+                </g>
+              </svg>
+              <div class="section-label">Apply Coupons</div>
+              <button class="btn-apply">APPLY</button>
+            </div>
+          </div>
+          <hr />
+          <!-- Gift Wrap Section -->
+          <div class="section-header">Gifting & Personalisation</div>
+          <div class="gift-content">
+            <div class="gift-image">
+              <picture>
+                <source
+                  srcset="
+                    https://constant.myntassets.com/checkout/assets/img/gift-big.webp
+                  "
+                  type="image/webp"
+                />
+                <img
+                  src="https://constant.myntassets.com/checkout/assets/img/gift-big.png"
+                  alt="Gift Wrap"
+                />
+              </picture>
+            </div>
+            <div>
+              <div style="font-weight: bold">Buying for a loved one?</div>
+              <div>
+                Gift wrap and personalised message on card, Only for ₹35
+              </div>
+             <a class="add-gift" href="#">ADD GIFT WRAP</a>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <h2>Price Details <span class="counter"></span></h2>
+        <div class="order-summery">
+          <div class="row1">
+            <span>Total MRP</span>
+            <span class="mrp"></span>
+          </div>
+          <div class="row2">
+            <span>Discounted on MRP</span>
+            <span class="discountMrp"></span>
+          </div>
+          <div class="row3">
+            <span>Coupon Discount</span>
+            <span class="CouponDis"></span>
+          </div>
+          <div class="row4">
+            <span>Platform Fee</span>
+            <span>Free</span>
+          </div>
+          <div class="row5">
+            <span>Shipping Fee</span>
+            <span>Free</span>
+          </div>
+          <hr />
+
+          <div class="row6">
+            <span>Total Amount</span>
+            <span class="total-amount">0</span>
+          </div>
+        </div>
+        <div id="form">
+          <form>
+            <label for="card">Card Number</label>
+            <input id="card" type="number" placeholder="Card Number" required/>
+
+            <label for="cvv">CVV</label>
+            <input id="cvv" type="number" placeholder="CVV" required/>
+
+            <label for="expire">Expiry Date</label>
+            <input id="expire" type="month"/>
+
+            <input type="submit" />
+          </form>
+        </div>
+      </div>
+    </div>
+    <button class="Procced">Procced</button>
+  </body>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="module" src="/scripts/bag.js"></script>

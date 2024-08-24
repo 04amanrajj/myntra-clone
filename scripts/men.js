@@ -1,4 +1,4 @@
-import { tostBottomEnd, isUserLoggedin, filter } from "../utils/utils.js";
+import { tostBottomEnd, isUserLoggedin, tostTopEnd } from "../utils/utils.js";
 let bag = [];
 
 document.querySelector("#product").addEventListener("input", search);
@@ -86,11 +86,16 @@ function displayProduct(data) {
     });
 }
 
- function wishlist(element){
-  let arr= JSON.parse(localStorage.getItem("wishlist"))||[]
-  arr.push(element)
-  localStorage.setItem("wishlist",JSON.stringify(arr))
+function wishlist(element) {
+  let arr = JSON.parse(localStorage.getItem("wishlist")) || [];
+  arr.push(element);
+  localStorage.setItem("wishlist", JSON.stringify(arr));
+  tostTopEnd.fire({
+    icon: "success",
+    title: "added to wishlist",
+  });
 }
+
 //filter
 function applyFilters() {
   // gender
