@@ -1,10 +1,10 @@
 let images = [
-  "../images/slideshow/womenPage/1.jpeg",
-  "../images/slideshow/womenPage/2.jpg",
-  "../images/slideshow/womenPage/3.jpg",
-  "../images/slideshow/womenPage/4.jpg",
-  "../images/slideshow/womenPage/5.jpg",
-  "../images/slideshow/womenPage/6.jpg"
+  "../images/slideshow/women-page/1.jpeg",
+  "../images/slideshow/women-page/2.jpg",
+  "../images/slideshow/women-page/3.jpg",
+  "../images/slideshow/women-page/4.jpg",
+  "../images/slideshow/women-page/5.jpg",
+  "../images/slideshow/women-page/6.jpg"
 ];
 
 function slideshow(images) {

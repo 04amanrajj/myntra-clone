@@ -40,7 +40,7 @@ function displayRecipt(bag) {
     let del = document.createElement("button");
     del.textContent = "Remove";
     del.setAttribute("class", "del");
-    del.addEventListener('click', () => removes(i));
+    del.addEventListener("click", () => removes(i));
 
     let product = document.createElement("div");
     product.append(imgDiv, description);
@@ -79,7 +79,7 @@ document.querySelector(".btn-apply").addEventListener("click", async () => {
     Swal.fire("Congrats");
   }
 
-  if (formValues === "aman30") {
+  if (formValues == "aman30") {
     let temp = total;
     total *= 0.7;
     displayTotal.textContent = "Rs " + total + " Only";
@@ -93,7 +93,7 @@ document.querySelector(".btn-apply").addEventListener("click", async () => {
   } else {
     tostTopEnd.fire({
       icon: "error",
-      title: "Try aman30",
+      title: "formValues",
     });
   }
 });
@@ -111,31 +111,31 @@ button.addEventListener("click", () => {
 function orderPlaced(e) {
   e.preventDefault();
   let timerInterval;
-Swal.fire({
-  title: "Processing!",
-  html: "Wait <b></b> milliseconds.",
-  timer: 5000,
-  timerProgressBar: true,
-  allowOutsideClick:false,
-  didOpen: () => {
-    Swal.showLoading();
-    const timer = Swal.getPopup().querySelector("b");
-    timerInterval = setInterval(() => {
-      timer.textContent = `${Swal.getTimerLeft()}`;
-    }, 100);
-  },
-  willClose: () => {
-    clearInterval(timerInterval);
-  }
-}).then((result) => {
-  /* Read more about handling dismissals below */
-  if (result.dismiss === Swal.DismissReason.timer) {
-    Swal.fire({
-      icon: "success",
-      title: "Order Placed",
-    });
-  }
-});
+  Swal.fire({
+    title: "Processing!",
+    html: "Wait <b></b> milliseconds.",
+    timer: 5000,
+    timerProgressBar: true,
+    allowOutsideClick: false,
+    didOpen: () => {
+      Swal.showLoading();
+      const timer = Swal.getPopup().querySelector("b");
+      timerInterval = setInterval(() => {
+        timer.textContent = `${Swal.getTimerLeft()}`;
+      }, 100);
+    },
+    willClose: () => {
+      clearInterval(timerInterval);
+    },
+  }).then((result) => {
+    /* Read more about handling dismissals below */
+    if (result.dismiss === Swal.DismissReason.timer) {
+      Swal.fire({
+        icon: "success",
+        title: "Order Placed",
+      });
+    }
+  });
 }
 
 // Function to remove item from the bag

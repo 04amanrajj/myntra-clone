@@ -1,6 +1,15 @@
-const filter = () => {
-  return "filter";
+const filter = async(option, data ,type) => {
+console.log({option , data, type});
+
+  let newData = data.filter((element) => {
+    if(element[type]){
+      return element[type].toLowerCase() === option.toLowerCase();
+    }
+  });
+  return newData;
 };
+
+
 
 const search = () => {
   return "search";
@@ -59,4 +68,5 @@ function redirect() {
     window.location.href = "shop.html";
   });
 }
+
 export { tostTopEnd, tostBottomEnd, filter, search, isUserLoggedin, redirect };

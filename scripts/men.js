@@ -1,5 +1,7 @@
-import { tostBottomEnd, isUserLoggedin, tostTopEnd } from "../utils/utils.js";
+import { tostBottomEnd, isUserLoggedin, tostTopEnd, filter } from "../utils/utils.js";
 let bag = [];
+// user name show in navbar
+isUserLoggedin();
 
 document.querySelector("#product").addEventListener("input", search);
 
@@ -120,9 +122,24 @@ function applyFilters() {
   displayProduct(filteredData);
 }
 
-document.querySelector(".filter button").addEventListener("click", applyFilters);
-document.querySelector(".resetF").addEventListener("click", () => {
-  displayProduct(bag);
-});
-// user name show in navbar
-isUserLoggedin();
+// document.querySelector(".filter button").addEventListener("click", applyFilters);
+// document.querySelector(".resetF").addEventListener("click", () => {
+//   displayProduct(bag);
+// });
+
+
+let filterbutton  = document.querySelectorAll('.filter-checkboxes-brand')
+
+for(let btn of filterbutton) {
+  btn.addEventListener('click',async(e)=>{
+    let type = e.target.className.split('-')[2]
+    let brandName = e.target.id
+    console.log(type , brandName);
+    let filterData = await filter(brandName, bag,type)
+    displayProduct(filterData)
+    
+  })
+  console.log(btn);
+}
+
+

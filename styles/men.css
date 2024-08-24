@@ -32,10 +32,16 @@
   display: flex;
   padding: 10px 1%;
   justify-content: space-evenly;
-  margin-bottom: 100px;
+  margin: 100px auto;
 }
 
 .filter {
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  /* width: 100%; */
+  left: 0;
+  z-index: 0;
   width: 250px;
   padding: 15px;
   background-color: #f9f9f9;
@@ -102,10 +108,12 @@
 
 .products div {
   background-color: #fff;
-  transition: transform 0.3s ease;
+  /* transition: transform 0.3s ease; */
+  transition: .5s;
   width: 220px;
   overflow: hidden;
   height: 380px;
+  cursor: pointer;
 
 }
 
