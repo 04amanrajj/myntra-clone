@@ -106,32 +106,32 @@
   background-color: #fff;
   transition: 0.5s;
   cursor: pointer;
+  position: relative;
 }
 
 .products div:hover h4 {
-  display: none;
+  opacity: 0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .products img {
-  max-height: 280px;
   width: 100%;
-  object-fit: cover;
 }
 
 .products div:hover .button {
-  display: flex;
+  opacity: 1;
 }
 
 .button {
+  opacity: 0;
   font-weight: bolder;
   align-items: center;
   cursor: pointer;
+  padding: 10px;
   border: none;
   color: white;
   background-color: #ff3f6c;
   width: 100%;
-  display: none;
   justify-content: center;
 }
 
@@ -143,13 +143,13 @@
   margin-top: 10px;
   line-height: 1;
 }
-.pricep{
+.pricep {
   display: flex;
   padding: 0 8px;
   font-size: 14px;
-  color: #666
+  color: #666;
 }
-.pricep span{
+.pricep span {
   font-weight: bold;
   color: black;
 }
@@ -177,16 +177,17 @@
     width: 100%;
     margin: auto;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px 5px ;
+    gap: 20px 5px;
   }
 
   .products div:hover h4 {
-    display: flex;
+    opacity: 1;
+
     box-shadow: none;
   }
 
   .button {
-    display: flex;
+    opacity: 1;
     padding: 10px;
   }
 
