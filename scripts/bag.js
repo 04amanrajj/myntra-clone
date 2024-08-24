@@ -44,8 +44,9 @@ function displayRecipt(bag) {
 
     let product = document.createElement("div");
     product.append(imgDiv, description);
-
-    productClass.append(product, del);
+    let itemsrow = document.createElement("div");
+    itemsrow.append(product, del);
+    productClass.append(itemsrow);
 
     total += Number(element.discountedPrice);
     total2 += Number(element.strike);
@@ -59,7 +60,7 @@ function bill() {
 
   displayTotal.textContent = "Rs " + total + " Only";
   totalMrp.textContent = "Rs " + total2;
-  discountMrp.textContent = "Rs " + (total2 - total);
+  discountMrp.textContent = "Rs " + (total2 - total).toFixed(2);
   couponDiscount.textContent = "Rs " + 0;
   totalAmount.textContent = "Rs " + total;
 }
@@ -72,6 +73,12 @@ document.querySelector(".btn-apply").addEventListener("click", async () => {
     focusConfirm: false,
     preConfirm: () => {
       return [document.getElementById("swal-input1").value];
+    },
+    didOpen: () => {
+      const input = document.getElementById("swal-input1");
+      if (input) {
+        input.style.width = "190px";
+      }
     },
   });
 
@@ -93,7 +100,7 @@ document.querySelector(".btn-apply").addEventListener("click", async () => {
   } else {
     tostTopEnd.fire({
       icon: "error",
-      title: "formValues",
+      title: "Try aman30",
     });
   }
 });
@@ -103,9 +110,14 @@ let form = document.getElementById("form");
 form.style.display = "none";
 form.addEventListener("click", orderPlaced);
 
+// scroll to bottom, click on procced
 let button = document.querySelector(".Procced");
 button.addEventListener("click", () => {
   form.style.display = "flex";
+  window.scrollTo({
+    top: document.body.scrollHeight,
+    behavior: "smooth",
+  });
 });
 
 function orderPlaced(e) {

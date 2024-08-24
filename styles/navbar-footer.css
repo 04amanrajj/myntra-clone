@@ -1,3 +1,6 @@
+*{
+  margin: 0;
+}
 body {
   font-family: "Poppins", sans-serif;
   line-height: 1.6;
@@ -114,7 +117,7 @@ hr {
 #footer {
   margin: 0 auto; 
   background-color: #f1f1f1;
-  padding: 20px 20%; 
+  padding: 20px 10%; 
   font-size: 12px;
 }
 

@@ -83,8 +83,9 @@ h1 {
 }
 
 .product {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  /* flex-direction: column; */
+  /* grid-template-columns: repeat(2, 1fr); */
   flex-direction: column;
   background-color: #fff;
   padding: 15px;
@@ -96,8 +97,11 @@ h1 {
   overflow: scroll;
   height: 900px;
 }
-
 .product > div {
+  display: flex;
+}
+
+.product > div > div {
   display: flex;
   /* align-items: center; */
   margin-bottom: 15px;
@@ -268,4 +272,104 @@ button {
 .gift-image img {
   /* height: ; */
   width: 39px;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.price > h2 {
+  display: flex;
+  margin: 10px auto 0 auto;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+  z-index: -1;
+  width: 100%;
+  color: white;
+  background-color: #ff3f6c;
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  #navbar {
+    padding: 10px 2%;
+  }
+
+  #container {
+    grid-template-columns: 1fr;
+  }
+
+  .product {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  #navbar {
+    padding: 10px 1%;
+  }
+
+  #container {
+    padding: 10px 1%;
+  }
+
+  .product img {
+    width: 80px;
+  }
+
+  .product h2 {
+    font-size: 16px;
+  }
+
+  .product p {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  #navbar {
+    padding: 10px 30px;
+    /* flex-direction: column; */
+  }
+  .mid {
+    display: none;
+  }
+  .bill {
+    height: auto;
+  }
+  .left img {
+    height: 30px;
+  }
+
+  #container {
+    padding: 10px;
+    margin: auto;
+  }
+
+  .product {
+    display: flex;
+    /* border: 1px solid #666666; */
+    margin-bottom: 10px;
+    width: 90%;
+    height: auto;
+  }
+  .del {
+    display: block;
+    float: right;
+  }
+
+  .Procced {
+    padding: 20px;
+    font-size: 16px;
+  }
 }
