@@ -6,15 +6,13 @@ body {
 #navbar {
   display: flex;
   position: sticky;
-  /* width: 100%; */
   top: 0;
   z-index: 1;
   justify-content: space-between;
   align-items: center;
-  padding: 0px 3%;
+  padding: 10px 3%; 
   background-color: #ffffff;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-
 }
 
 #navbar .left,
@@ -23,10 +21,12 @@ body {
   display: flex;
   align-items: center;
 }
-#mens-page,#womens-page{
-  /* border: 2px solid black; */
-  padding: 20px 0px
+
+#mens-page,
+#womens-page {
+  padding: 20px 0px;
 }
+
 .right button {
   padding: 11px 20px;
   font-size: 16px;
@@ -54,37 +54,31 @@ body {
 
 #navbar input[type="text"] {
   padding: 10px;
-  width: 350px;
+  width: 350px; 
   border: 1px solid #ccc;
   border-radius: 4px 0 0 4px;
 }
 
-
-.navv{
+.navv {
   list-style-type: none;
   margin: 0;
   padding: 0;
   display: flex;
 }
-.navv li{
+
+.navv li {
   position: relative;
-  /* padding: 15px 20px; */
 }
 
 
 .dropdown:hover .choose {
-  /* min-height: 100px; */
-  /* background-color: #333; */
-  /* color: #007bff; */
   min-width: 80%;
   margin-top: auto;
-  /* padding: 10px; */
   display: grid;
   border-radius: 10px;
-  grid-template-columns: repeat(5,1fr);
-  
-  
+  grid-template-columns: repeat(5, 1fr);
 }
+
 .dropdown .choose {
   display: none;
   position: absolute;
@@ -95,7 +89,8 @@ body {
   z-index: 1;
   padding: 10px;
 }
-hr{
+
+hr {
   color: grey;
 }
 
@@ -104,26 +99,23 @@ hr{
   color: #333;
   display: block;
   padding: 1px 1px;
-  margin: 100px;
+  margin: 5px 0; 
 }
 
 .navBlock li a:hover {
   background-color: #f4f4f4;
 }
-.navBlock{
- /* border: 2px solid black; */
+
+.navBlock {
   font-size: 12px;
   width: 250px;
-  /* margin: 0 20px; */
 }
 
 #footer {
-  margin: 100px;
-  min-width: 1080px;
+  margin: 0 auto; 
   background-color: #f1f1f1;
-  padding: 20px 20%;
+  padding: 20px 20%; 
   font-size: 12px;
-  margin: 0 auto;
 }
 
 .top-part img {
@@ -170,9 +162,84 @@ hr{
   display: flex;
   justify-content: space-between;
 }
-@media (min-width: 1024px) {
+
+
+@media (max-width: 1024px) {
+  #navbar input[type="text"] {
+      width: 250px; 
+  }
+
   #footer {
-    padding: 2% 13%;
-    min-width: 500px;
+      padding: 2% 10%; 
+  }
+
+  .top-part {
+      flex-direction: column; 
+      align-items: flex-start; 
+  }
+
+  .top-part div {
+      min-width: 100%; 
+  }
+}
+
+@media (max-width: 768px) {
+  #navbar {
+    padding: 0;
+      flex-direction: row; 
+      align-items: flex-start; 
+  }
+
+  #navbar .right {
+      margin-top: 10px; 
+  }
+
+  .navv {
+    display: none;
+      flex-direction: column; 
+  }
+
+  .navv li {
+      width: 100%; 
+      padding: 10px; 
+  }
+
+  .navBlock {
+      width: 100%; 
+  }
+
+  .meninfo {
+      flex-direction: column; 
+  }
+
+  .extra, .price {
+      min-width: 100%; 
+      margin-bottom: 20px; 
+  }
+}
+
+@media (max-width: 480px) {
+  #product{
+    display: none;
+  }
+  #navbar a,
+  #navbar p {
+      font-size: 0.9rem; 
+  }
+
+  .top-part h4 {
+      font-size: 1.2em; 
+  }
+
+  .popular {
+      font-size: 1.2em; 
+  }
+
+  #footer {
+      padding: 10px; 
+  }
+
+  .navBlock li a {
+      padding: 5px; 
   }
 }

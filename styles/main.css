@@ -63,3 +63,34 @@
   width: 100%;
   height: auto;
 }
+
+#mobile,#mobile>a{
+  display: none;
+  text-align: center;
+  justify-content: space-around;
+  margin: 10px auto;
+  text-decoration: none;
+  color: #3e4152;
+  font-weight: bolder;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .slick-dots{
+    display: none;
+  }
+  .slideshow img{
+    object-fit:cover;
+    height: 200px;
+  }
+  #Main > h4 {
+    margin: 10px auto;
+    font-size: 0.8em;
+  }
+}
+
+@media (max-width: 480px) {
+  #mobile,#mobile>a{
+    display: flex;
+  }
+}
