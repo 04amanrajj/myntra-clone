@@ -1,4 +1,9 @@
-import { tostBottomEnd, isUserLoggedin, tostTopEnd, filter } from "../utils/utils.js";
+import {
+  tostBottomEnd,
+  isUserLoggedin,
+  tostTopEnd,
+  filter,
+} from "../utils/utils.js";
 let bag = [];
 // user name show in navbar
 isUserLoggedin();
@@ -63,29 +68,36 @@ function displayProduct(data) {
     product.textContent = element.product;
 
     let brand = document.createElement("p");
+
     brand.textContent = element.brand;
+    // line between strike
+    let price = document.createElement("div");
+    price.setAttribute("class", "pricep");
 
-    let price = document.createElement("p");
-    price.textContent ="Rs "+
-      element.discountedPrice +
-      " " +"Rs "+
-      element.strike +
-      " " +
-      element.discountPercentage;
+    let strikePrice = document.createElement("span");
+    strikePrice.textContent = "Rs." + element.strike;
+    strikePrice.style.textDecoration = "line-through";
+    strikePrice.style.marginLeft = "5px";
+    strikePrice.style.color = "#666";
 
-      let wish = document.createElement("button");
-      wish.textContent="Wishlist"
-      wish.addEventListener("click",()=>{
-        wishlist(element)
-      })
-      wish.setAttribute("class","button")
-  
-      let discount = document.createElement("p");
-      discount.textContent = element.discountPercentage;
-  
-      card.append(img, wish,product, brand, price );
-      document.querySelector(".products").append(card);
+    let discount = document.createElement("p");
+    discount.textContent = element.discountPercentage;
+
+    let discountedPrice = document.createElement("span");
+    discountedPrice.textContent = "Rs." + element.discountedPrice;
+
+    price.append(discountedPrice, strikePrice, discount);
+
+    let wish = document.createElement("button");
+    wish.textContent = "Wishlist";
+    wish.addEventListener("click", () => {
+      wishlist(element);
     });
+    wish.setAttribute("class", "button");
+
+    card.append(img, wish, product, brand, price);
+    document.querySelector(".products").append(card);
+  });
 }
 
 function wishlist(element) {
@@ -127,19 +139,15 @@ function applyFilters() {
 //   displayProduct(bag);
 // });
 
+let filterbutton = document.querySelectorAll(".filter-checkboxes-brand");
 
-let filterbutton  = document.querySelectorAll('.filter-checkboxes-brand')
-
-for(let btn of filterbutton) {
-  btn.addEventListener('click',async(e)=>{
-    let type = e.target.className.split('-')[2]
-    let brandName = e.target.id
-    console.log(type , brandName);
-    let filterData = await filter(brandName, bag,type)
-    displayProduct(filterData)
-    
-  })
+for (let btn of filterbutton) {
+  btn.addEventListener("click", async (e) => {
+    let type = e.target.className.split("-")[2];
+    let brandName = e.target.id;
+    console.log(type, brandName);
+    let filterData = await filter(brandName, bag, type);
+    displayProduct(filterData);
+  });
   console.log(btn);
 }
-
-

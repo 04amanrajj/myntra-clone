@@ -143,7 +143,16 @@
   margin-top: 10px;
   line-height: 1;
 }
-
+.pricep{
+  display: flex;
+  padding: 0 8px;
+  font-size: 14px;
+  color: #666
+}
+.pricep span{
+  font-weight: bold;
+  color: black;
+}
 .products p {
   padding: 0 10px;
   font-size: 14px;
@@ -173,7 +182,7 @@
 
   .products div:hover h4 {
     display: flex;
-    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+    box-shadow: none;
   }
 
   .button {

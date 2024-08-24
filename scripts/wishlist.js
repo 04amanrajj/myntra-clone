@@ -39,10 +39,10 @@ function displayWish(data) {
 
     let price = document.createElement("p");
     price.textContent =
-      "Rs " +
+      "Rs." +
       element.discountedPrice +
       " " +
-      "Rs " +
+      "Rs." +
       element.strike +
       " " +
       element.discountPercentage;

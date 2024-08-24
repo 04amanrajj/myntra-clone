@@ -34,7 +34,7 @@ function displayRecipt(bag) {
     description.append(brand);
 
     let price = document.createElement("p");
-    price.textContent = "Rs " + element.discountedPrice;
+    price.textContent = "Rs." + element.discountedPrice;
     description.append(price);
 
     let del = document.createElement("button");
@@ -58,11 +58,11 @@ function displayRecipt(bag) {
 function bill() {
   document.querySelector(".counter").textContent = "(" + bag.length + " items)";
 
-  displayTotal.textContent = "Rs " + total + " Only";
-  totalMrp.textContent = "Rs " + total2;
-  discountMrp.textContent = "Rs " + (total2 - total).toFixed(2);
-  couponDiscount.textContent = "Rs " + 0;
-  totalAmount.textContent = "Rs " + total;
+  displayTotal.textContent = "Rs." + total + " Only";
+  totalMrp.textContent = "Rs." + total2;
+  discountMrp.textContent = "Rs." + (total2 - total).toFixed(2);
+  couponDiscount.textContent = "Rs." + 0;
+  totalAmount.textContent = "Rs." + total;
 }
 
 // Coupon code application
@@ -89,9 +89,9 @@ document.querySelector(".btn-apply").addEventListener("click", async () => {
   if (formValues == "aman30") {
     let temp = total;
     total *= 0.7;
-    displayTotal.textContent = "Rs " + total + " Only";
-    totalAmount.textContent = "Rs " + total;
-    couponDiscount.textContent = "Rs " + (temp - total);
+    displayTotal.textContent = "Rs." + total + " Only";
+    totalAmount.textContent = "Rs." + total;
+    couponDiscount.textContent = "Rs." + (temp - total);
 
     tostTopEnd.fire({
       icon: "success",

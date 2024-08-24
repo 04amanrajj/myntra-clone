@@ -1,4 +1,4 @@
-import { tostTopEnd,tostBottomEnd, isUserLoggedin } from "../utils/utils.js";
+import { tostTopEnd, tostBottomEnd, isUserLoggedin } from "../utils/utils.js";
 // user name show in navbar
 isUserLoggedin();
 
@@ -66,24 +66,30 @@ function displayProduct(data) {
     let brand = document.createElement("p");
     brand.textContent = element.brand;
 
-    let price = document.createElement("p");
-    price.textContent =
-      "Rs " +
-      element.discountedPrice +
-      " " +
-      "Rs " +
-      element.strike +
-      " " +
-      element.discountPercentage;
+    // line between strike
+    let price = document.createElement("div");
+    price.setAttribute("class", "pricep");
+
+    let strikePrice = document.createElement("span");
+    strikePrice.textContent = "Rs." + element.strike;
+    strikePrice.style.textDecoration = "line-through";
+    strikePrice.style.marginLeft = "5px";
+    strikePrice.style.color = "#666";
+
+    let discount = document.createElement("p");
+    discount.textContent = element.discountPercentage;
+
+    let discountedPrice = document.createElement("span");
+    discountedPrice.textContent = "Rs." + element.discountedPrice;
+
+    price.append(discountedPrice, strikePrice, discount);
+
     let wish = document.createElement("button");
     wish.textContent = "Wishlist";
     wish.addEventListener("click", () => {
       wishlist(element);
     });
     wish.setAttribute("class", "button");
-
-    let discount = document.createElement("p");
-    discount.textContent = element.discountPercentage;
 
     card.append(img, wish, product, brand, price);
     document.querySelector(".products").append(card);
@@ -130,4 +136,3 @@ document
 document.querySelector(".resetF").addEventListener("click", () => {
   displayProduct(bag);
 });
-
