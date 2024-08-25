@@ -101,9 +101,6 @@
     margin: 10px auto;
     font-size: 0.8em;
   }
-}
-
-@media (max-width: 480px) {
   #mobile,
   #mobile > a {
     display: flex;

@@ -75,6 +75,11 @@
 
 /* Responsive Styles */
 @media (max-width: 768px) {
+
+  #mobile,#mobile>a{
+    display: flex;
+  }
+
   .slick-dots{
     display: none;
   }
@@ -85,11 +90,5 @@
   #Main > h4 {
     margin: 10px auto;
     font-size: 0.8em;
-  }
-}
-
-@media (max-width: 480px) {
-  #mobile,#mobile>a{
-    display: flex;
   }
 }

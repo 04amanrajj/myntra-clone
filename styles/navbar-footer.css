@@ -25,6 +25,29 @@ body {
   align-items: center;
 }
 
+.right a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+  margin-left: 15px;
+}
+
+.right i {
+  font-size: 20px;
+  /* margin-bottom: 5px; */
+}
+
+.right > i {
+  display: none;
+}
+
+.right span {
+  /* display: none; */
+  font-size: 12px;
+}
+
 #mens-page,
 #womens-page {
   padding: 20px 0px;
@@ -170,7 +193,7 @@ hr {
   justify-content: space-between;
 }
 
-@media (max-width: 1366px) {
+@media (max-width: 1024px) {
   #navbar input[type="text"] {
     width: auto;
   }
@@ -179,6 +202,10 @@ hr {
   }
   #footer {
     padding: 2% 10%;
+  }
+  .navv > p {
+    display: none;
+    flex-direction: column;
   }
 
   .top-part {
@@ -200,6 +227,11 @@ hr {
 
   #navbar .right {
     margin-top: 10px;
+  }
+
+
+  #product {
+    display: none;
   }
 
   .navv,
@@ -229,6 +261,17 @@ hr {
 }
 
 @media (max-width: 480px) {
+  .right i {
+    font-size: 30px;
+  }
+  .right {
+    display: flex;
+  }
+  .right span {
+    font-weight: bolder;
+    display: none;
+  }
+
   #product {
     display: none;
   }

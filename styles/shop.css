@@ -1,7 +1,7 @@
 #footer {
   background-color: #f4f4f4;
   color: #333;
-  font-family: Arial, sans-serif;
+  font-family: Poppins, sans-serif;
   padding: 0 auto;
   border-top: 1px solid #ddd;
   margin-top: 20px;
@@ -26,13 +26,13 @@
   text-align: justify;
 }
 
-#counterDiv{
+#counterDiv {
   display: flex;
   font-size: 1.25em;
 
   margin: 10px 0 0 75px;
 }
-.counter{
+.counter {
   color: #777;
 }
 
@@ -85,12 +85,25 @@
   font-size: 1.1em;
 }
 
-.filter select {
-  width: 100%;
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
+#priceSort {
+  padding: 8px 12px;
+  font-size: 16px;
+  color: #333;
   background-color: #fff;
+  width: 100%;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+#priceSort:hover {
+  background-color: #fff;
+  border-color: #bbb;
+}
+
+#priceSort:focus {
+  border-color: #888;
 }
 
 .filter input[type="checkbox"],
@@ -214,7 +227,7 @@
 .mfilter {
   display: none;
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   #Main {
     margin-top: 10px;
     flex-direction: column;
@@ -295,6 +308,15 @@
   }
   #footer {
     padding: auto 0;
+  }
+
+  #counterDiv {
+    margin: 10px auto;
+    /* display: flex; */
+    justify-content: center;
+    /* font-size: 1.25em; */
+
+    /* margin: 10px 0 0 75px; */
   }
 }
 

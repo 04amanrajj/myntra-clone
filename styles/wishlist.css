@@ -2,7 +2,7 @@
   margin-top: 10px;
   text-align: center;
   width: 400px;
-  padding: 25px;
+  padding: 15px;
   background-color: #ff3f6c;
   color: white;
   font-size: 2.5em;
@@ -117,7 +117,7 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   * {
     margin: 0;
   }
