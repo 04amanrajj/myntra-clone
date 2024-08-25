@@ -80,7 +80,9 @@ body {
   border-radius: 10px;
   grid-template-columns: repeat(5, 1fr);
 }
-
+.dropdown .choose {
+  transition: 300ms ease;
+}
 .dropdown .choose {
   display: none;
   position: absolute;
@@ -187,11 +189,6 @@ hr {
   .top-part div {
     min-width: 100%;
   }
-  .navv > p {
-    /* background-color: #007bff; */
-    /* font-size: 10em; */
-    display: none;
-  }
 }
 
 @media (max-width: 768px) {
@@ -205,7 +202,8 @@ hr {
     margin-top: 10px;
   }
 
-  .navv {
+  .navv,
+  .navv > p {
     display: none;
     flex-direction: column;
   }

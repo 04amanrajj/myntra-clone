@@ -324,6 +324,7 @@
     </header>
 
     <!-- Main -->
+     <div id="counterDiv"><h4><strong>Men's Fashion Store -</strong></h4> <span class="counter"></span></div>
     <div id="Main">
       <div class="mfilter">
         <button class="show-mobile-filter">Filters</button
@@ -347,20 +348,31 @@
             Women
           </label>
         </div>
+        <hr />
+        <div><strong>PRICE</strong></div>
+        <select id="priceSort">
+          <option value="">Relative</option>
+          <option value="low to high">Low To High</option>
+          <option value="high to low">High To Low</option>
+        </select> <hr>
         <div>
           <strong>MEN'S PRODUCTS</strong><br />
-          <input type="checkbox" class="filter-checkboxes" id="T-shirt" />T-shirt <br />
-          <input type="checkbox" class="filter-checkboxes" id="Jeans" />Jeans <br />
-          <input type="checkbox" class="filter-checkboxes" id="Shirt" />Shirt <br />
-          <input type="checkbox" class="filter-checkboxes" id="Shorts" />Shorts <br />
-          <input type="checkbox" class="filter-checkboxes" id="Sweatshirt" />Sweatshirt <br />
-          <input type="checkbox" class="filter-checkboxes" id="Trousers" />Trousers <br />
-          <input type="checkbox" class="filter-checkboxes" id="Polo" />Polo <br />
-          <input type="checkbox" class="filter-checkboxes" id="Jacket" />Jacket <br />
-          <input type="checkbox" class="filter-checkboxes" id="Blazer" />Blazer <br />
-          <input type="checkbox" class="filter-checkboxes" id="Shorts" />Shorts <br />
+          <input type="checkbox" class="filter-product" id="T-shirt" />T-shirt
+          <br />
+          <input type="checkbox" class="filter-product" id="Jeans" />Jeans
+          <br />
+          <input type="checkbox" class="filter-product" id="Shirt" />Shirt
+          <br />
+          <input type="checkbox" class="filter-product" id="Shorts" />Shorts
+          <br />
+          
+          <input type="checkbox" class="filter-product" id="Trousers" />Trousers
+          <br />
+          <input type="checkbox" class="filter-product" id="Polo" />Polo <br />
+          <input type="checkbox" class="filter-product" id="Shorts" />Shorts
+          <br />
         </div>
-        
+
         <hr />
         <div>
           <strong>BRAND</strong> <br />
@@ -380,13 +392,6 @@
             id="Raymond"
           />Raymond
         </div>
-        <hr />
-        <div><strong>PRICE</strong></div>
-        <select id="priceSort">
-          <option value="">Relative</option>
-          <option value="low to high">Low To High</option>
-          <option value="high to low">High To Low</option>
-        </select>
       </div>
       <div class="products"></div>
     </div>

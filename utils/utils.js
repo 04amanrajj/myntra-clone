@@ -1,18 +1,12 @@
-const filter = async(option, data ,type) => {
-console.log({option , data, type});
+const filter = async (option, data, type) => {
+  // console.log({ option, data, type });
 
   let newData = data.filter((element) => {
-    if(element[type]){
-      return element[type].toLowerCase() === option.toLowerCase();
+    if (element[type]) {
+      return element[type].toLowerCase().includes(option.toLowerCase());
     }
   });
   return newData;
-};
-
-
-
-const search = () => {
-  return "search";
 };
 
 const tostTopEnd = Swal.mixin({
@@ -69,4 +63,4 @@ function redirect() {
   });
 }
 
-export { tostTopEnd, tostBottomEnd, filter, search, isUserLoggedin, redirect };
+export { tostTopEnd, tostBottomEnd, filter, isUserLoggedin, redirect };

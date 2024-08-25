@@ -330,6 +330,7 @@
     </header>
 
     <!-- Main -->
+    <div id="counterDiv"><h4><strong>Fashion Store -</strong></h4> <span class="counter"></span></div>
     <div id="Main">
       <div class="mfilter">
         <button class="show-mobile-filter">Filters</button
@@ -353,24 +354,27 @@
             Women
           </label>
         </div>
+        <hr />
+        <div><strong>PRICE</strong></div>
+        <select id="priceSort">
+          <option value="">Relative</option>
+          <option value="low to high">Low To High</option>
+          <option value="high to low">High To Low</option>
+        </select> <hr>
         <div>
           <strong>PRODUCTS</strong><br />
-          <input type="checkbox" class="filter-checkboxes" id="T-shirt" />T-shirt <br />
-          <input type="checkbox" class="filter-checkboxes" id="Jeans" />Jeans <br />
-          <input type="checkbox" class="filter-checkboxes" id="Shirt" />Shirt <br />
-          <input type="checkbox" class="filter-checkboxes" id="Shorts" />Shorts <br />
-          <input type="checkbox" class="filter-checkboxes" id="Sweatshirt" />Sweatshirt <br />
-          <input type="checkbox" class="filter-checkboxes" id="Maxi Dress" />Maxi Dress <br />
-          <input type="checkbox" class="filter-checkboxes" id="Fit & Flare" />Fit & Flare <br />
-          <input type="checkbox" class="filter-checkboxes" id="Bodycon Dress" />Bodycon Dress <br />
-          <input type="checkbox" class="filter-checkboxes" id="Midi Dress" />Midi Dress <br />
-          <input type="checkbox" class="filter-checkboxes" id="A-Line Dress" />A-Line Dress <br />
-          <input type="checkbox" class="filter-checkboxes" id="Maxi Dress" />Maxi Dress <br />
-          <input type="checkbox" class="filter-checkboxes" id="Fit & Flare" />Fit & Flare <br />
-          <input type="checkbox" class="filter-checkboxes" id="Bodycon Dress" />Bodycon Dress <br />
-          <input type="checkbox" class="filter-checkboxes" id="Midi Dress" />Midi Dress <br />
-          <input type="checkbox" class="filter-checkboxes" id="A-Line Dress" />A-Line Dress <br />
+          <input type="checkbox" class="filter-product" id="T-shirt" />T-shirt <br />
+          <input type="checkbox" class="filter-product" id="Jeans" />Jeans <br />
+          <input type="checkbox" class="filter-product" id="Formal Shirt" />Formal Shirt <br />
+          <input type="checkbox" class="filter-product" id="Casual Shirt" />Casual Shirt <br />
+          <input type="checkbox" class="filter-product" id="Shorts" />Shorts <br />
+          <input type="checkbox" class="filter-product" id="Trousers" />Trousers <br />
+          <input type="checkbox" class="filter-product" id="Sweatshirt" />Sweatshirt <br />
+          <input type="checkbox" class="filter-product" id="Polo T-shirt" />Polo T-shirt <br />
+          <input type="checkbox" class="filter-product" id="Denim Shorts" />Denim Shorts <br />
+          <input type="checkbox" class="filter-product" id="Skinny Jeans" />Skinny Jeans <br />
         </div>
+        
         <hr />
         <div>
           <strong>BRAND</strong> <br />
@@ -452,13 +456,7 @@
           <input type="checkbox" class="filter-checkboxes-brand" id="Park Avenue" />Park Avenue <br />
           <input type="checkbox" class="filter-checkboxes-brand" id="Raymond" />Raymond <br />
         </div>
-        <hr />
-        <div><strong>PRICE</strong></div>
-        <select id="priceSort">
-          <option value="">Relative</option>
-          <option value="low to high">Low To High</option>
-          <option value="high to low">High To Low</option>
-        </select>
+        
       </div>
       <div class="products"></div>
     </div>

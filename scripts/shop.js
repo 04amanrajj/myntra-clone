@@ -98,25 +98,28 @@ function displayProduct(data) {
 
     card.append(img, wish, product, brand, price);
     document.querySelector(".products").append(card);
+
+    // items counter display
+    let counter = document.querySelector(".counter");
+    counter.textContent = data.length + " items";
   });
 }
 
 // mobile responsive filter
-let show=document.querySelector(".show-mobile-filter")
-let close=document.querySelector(".hide-mobile-filter")
-close.addEventListener("click",function(){
-  let filterPanel=document.querySelector(".filter")
-  filterPanel.style.display='none'
-  if(filterPanel.style.display=='none') close.style.display='none'
-})
-show.addEventListener("click",function(){
-  let filterPanel=document.querySelector(".filter")
-  close.style.display="flex"
-  filterPanel.style.display='flex'
-})
+let show = document.querySelector(".show-mobile-filter");
+let close = document.querySelector(".hide-mobile-filter");
+close.addEventListener("click", function () {
+  let filterPanel = document.querySelector(".filter");
+  filterPanel.style.display = "none";
+  if (filterPanel.style.display == "none") close.style.display = "none";
+});
+show.addEventListener("click", function () {
+  let filterPanel = document.querySelector(".filter");
+  close.style.display = "flex";
+  filterPanel.style.display = "flex";
+});
 
-
-
+// wishlist
 function wishlist(element) {
   let arr = JSON.parse(localStorage.getItem("wishlist")) || [];
   arr.push(element);
@@ -129,44 +132,35 @@ function wishlist(element) {
 
 //filter
 function applyFilters() {
-  // gender
   let gender =
     document.querySelector('input[name="gender"]:checked')?.value || "All";
-
-  // price sort
   let priceSort = document.getElementById("priceSort").value;
-
   let filteredData = bag;
-
-  if (gender != "All") {
+  if (gender != "All")
     filteredData = filteredData.filter((element) => element.gender == gender);
-  }
-
-  if (priceSort === "low to high") {
+  if (priceSort === "low to high")
     filteredData.sort((a, b) => a.discountedPrice - b.discountedPrice);
-  } else if (priceSort === "high to low") {
+  else if (priceSort === "high to low")
     filteredData.sort((a, b) => b.discountedPrice - a.discountedPrice);
-  }
-
   displayProduct(filteredData);
 }
 
+// apply or reset filter
 document
   .querySelector(".filter button")
   .addEventListener("click", applyFilters);
 document.querySelector(".resetF").addEventListener("click", () => {
-  document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+  document.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
     checkbox.checked = false;
   });
-  document.querySelectorAll('input[type="radio"]').forEach(radio => {
+  document.querySelectorAll('input[type="radio"]').forEach((radio) => {
     radio.checked = false;
   });
-  document.querySelectorAll('select').forEach(select => {
+  document.querySelectorAll("select").forEach((select) => {
     select.selectedIndex = 0;
   });
   displayProduct(bag);
 });
-
 
 let filterbutton = document.querySelectorAll(".filter-checkboxes-brand");
 
@@ -174,9 +168,21 @@ for (let btn of filterbutton) {
   btn.addEventListener("click", async (e) => {
     let type = e.target.className.split("-")[2];
     let brandName = e.target.id;
-    console.log(type, brandName);
+    // console.log(type, brandName);
     let filterData = await filter(brandName, bag, type);
     displayProduct(filterData);
   });
-  console.log(btn);
+  // console.log(btn);
+}
+
+let filterbutton2 = document.querySelectorAll(".filter-product");
+
+for (let btn of filterbutton2) {
+  btn.addEventListener("click", async (e) => {
+    let type = e.target.className.split("-")[1];
+    let productName = e.target.id;
+    let filterData = await filter(productName, bag, type);
+    console.log(filterData);
+    displayProduct(filterData);
+  });
 }

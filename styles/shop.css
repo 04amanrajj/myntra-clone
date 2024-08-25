@@ -26,11 +26,21 @@
   text-align: justify;
 }
 
+#counterDiv{
+  display: flex;
+  font-size: 1.25em;
+
+  margin: 10px 0 0 75px;
+}
+.counter{
+  color: #777;
+}
+
 #Main {
   display: flex;
   padding: 10px 1%;
   justify-content: space-evenly;
-  margin: 100px auto;
+  margin: 0 auto 100px auto;
 }
 
 .filter {
@@ -129,7 +139,7 @@
   grid-template-columns: repeat(5, 1fr);
   gap: 10px;
   width: 76%;
-  margin-bottom: 10%;
+  /* margin-bottom: 10%; */
   overflow: scroll;
   scrollbar-width: none;
 }
