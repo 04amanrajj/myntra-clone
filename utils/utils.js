@@ -48,9 +48,10 @@ function isUserLoggedin() {
     }
 
     if (loggedInUser) {
-      let loginLink = document.querySelector(".username");
+      let loginLink = document.querySelector(".user");
       if (loginLink) {
         loginLink.textContent = loggedInUser;
+        loginLink.style.display="flex"
       }
     }
   });

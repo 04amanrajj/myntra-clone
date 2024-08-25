@@ -89,9 +89,9 @@ document.querySelector(".btn-apply").addEventListener("click", async () => {
   if (formValues == "aman30") {
     let temp = total;
     total *= 0.7;
-    displayTotal.textContent = "Rs." + total + " Only";
-    totalAmount.textContent = "Rs." + total;
-    couponDiscount.textContent = "Rs." + (temp - total);
+    displayTotal.textContent = "Rs." + total.toFixed(0); + " Only";
+    totalAmount.textContent = "Rs." + total.toFixed(0);;
+    couponDiscount.textContent = "Rs." + (temp - total).toFixed(0);
 
     tostTopEnd.fire({
       icon: "success",
