@@ -112,7 +112,7 @@ form.addEventListener("submit", orderPlaced);
 
 // scroll to bottom, click on procced
 let button = document.querySelector(".Procced");
-button.addEventListener("submit", () => {
+button.addEventListener("click", () => {
   form.style.display = "flex";
   window.scrollTo({
     top: document.body.scrollHeight,
