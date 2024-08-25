@@ -100,6 +100,20 @@ function displayProduct(data) {
   });
 }
 
+// mobile responsive filter
+let show=document.querySelector(".show-mobile-filter")
+let close=document.querySelector(".hide-mobile-filter")
+close.addEventListener("click",function(){
+  let filterPanel=document.querySelector(".filter")
+  filterPanel.style.display='none'
+  if(filterPanel.style.display=='none') close.style.display='none'
+})
+show.addEventListener("click",function(){
+  let filterPanel=document.querySelector(".filter")
+  close.style.display="flex"
+  filterPanel.style.display='flex'
+})
+
 function wishlist(element) {
   let arr = JSON.parse(localStorage.getItem("wishlist")) || [];
   arr.push(element);
@@ -111,7 +125,7 @@ function wishlist(element) {
 }
 
 //filter
-function applyFilters() {
+() => {
   // gender
   let gender =
     document.querySelector('input[name="gender"]:checked')?.value || "All";
@@ -132,7 +146,7 @@ function applyFilters() {
   }
 
   displayProduct(filteredData);
-}
+};
 
 // document.querySelector(".filter button").addEventListener("click", applyFilters);
 // document.querySelector(".resetF").addEventListener("click", () => {

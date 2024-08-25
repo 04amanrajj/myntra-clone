@@ -325,9 +325,13 @@
 
     <!-- Main -->
     <div id="Main">
+      <div class="mfilter">
+        <button class="show-mobile-filter">Filters</button
+        ><button class="hide-mobile-filter">close</button>
+      </div>
       <div class="filter">
         <h2>Filters</h2>
-        <button>Apply</button><button type="reset">Reset</button>
+        <button>Apply</button><button class="resetF" type="reset">Reset</button>
         <hr />
         <div id="genders">
           <label for="men">
@@ -344,16 +348,37 @@
           </label>
         </div>
         <div>
-          <strong>CATEGORIES</strong><br />
-          <input type="checkbox" class="filter-checkboxes"  id="Shirt" />Shirts <br />
-          <input type="checkbox" class="filter-checkboxes"  id="Trousers" />Trousers <br />
+          <strong>MEN'S PRODUCTS</strong><br />
+          <input type="checkbox" class="filter-checkboxes" id="T-shirt" />T-shirt <br />
+          <input type="checkbox" class="filter-checkboxes" id="Jeans" />Jeans <br />
+          <input type="checkbox" class="filter-checkboxes" id="Shirt" />Shirt <br />
+          <input type="checkbox" class="filter-checkboxes" id="Shorts" />Shorts <br />
+          <input type="checkbox" class="filter-checkboxes" id="Sweatshirt" />Sweatshirt <br />
+          <input type="checkbox" class="filter-checkboxes" id="Trousers" />Trousers <br />
+          <input type="checkbox" class="filter-checkboxes" id="Polo" />Polo <br />
+          <input type="checkbox" class="filter-checkboxes" id="Jacket" />Jacket <br />
+          <input type="checkbox" class="filter-checkboxes" id="Blazer" />Blazer <br />
+          <input type="checkbox" class="filter-checkboxes" id="Shorts" />Shorts <br />
         </div>
+        
         <hr />
         <div>
           <strong>BRAND</strong> <br />
-          <input type="checkbox" class="filter-checkboxes-brand"  id="THE BEAR HOUSE" />THE BEAR HOUSE <br />
-          <input type="checkbox" class="filter-checkboxes-brand"  id="Park Avenue" />Park Avenue <br />
-          <input type="checkbox" class="filter-checkboxes-brand"  id="Raymond" />Raymond
+          <input
+            type="checkbox"
+            class="filter-checkboxes-brand"
+            id="THE BEAR HOUSE"
+          />THE BEAR HOUSE <br />
+          <input
+            type="checkbox"
+            class="filter-checkboxes-brand"
+            id="Park Avenue"
+          />Park Avenue <br />
+          <input
+            type="checkbox"
+            class="filter-checkboxes-brand"
+            id="Raymond"
+          />Raymond
         </div>
         <hr />
         <div><strong>PRICE</strong></div>

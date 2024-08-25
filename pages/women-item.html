@@ -291,11 +291,13 @@
                   <a href="#" style="color: #ff3f6c" class="categoryName"
                     >Backpacks</a
                   >
-                </li><li>
+                </li>
+                <li>
                   <a href="#" style="color: #ff3f6c" class="categoryName"
                     >Handbags, Bags & Wallets</a
                   >
-                </li><li>
+                </li>
+                <li>
                   <a href="#" style="color: #ff3f6c" class="categoryName"
                     >Luggages & Trolleys</a
                   >
@@ -310,7 +312,11 @@
         </ul>
       </div>
       <div class="right">
-        <input type="text" id="product" placeholder="Search for products,brands and more" />
+        <input
+          type="text"
+          id="product"
+          placeholder="Search for products,brands and more"
+        />
         <a class="username" href="login.html">Login</a>
         <a href="/pages/wishlist.html">Wishlist</a>
         <a href="/pages/bag.html">Bag</a>
@@ -319,9 +325,13 @@
 
     <!-- Main -->
     <div id="Main">
+      <div class="mfilter">
+        <button class="show-mobile-filter">Filters</button
+        ><button class="hide-mobile-filter">close</button>
+      </div>
       <div class="filter">
         <h2>Filters</h2>
-        <button>Apply</button><button type="reset">Reset</button>
+        <button>Apply</button><button class="resetF" type="reset">Reset</button>
         <hr />
         <div id="genders">
           <label for="men">
@@ -338,19 +348,101 @@
           </label>
         </div>
         <div>
-          <strong>CATEGORIES</strong><br />
-          <input type="checkbox" id="Shirt" />Shirts <br />
-          <input type="checkbox" id="Trousers" />Trousers <br />
+          <strong>WOMEN'S PRODUCTS</strong><br />
+          <input type="checkbox" class="filter-checkboxes" id="Dress" />Dress <br />
+          <input type="checkbox" class="filter-checkboxes" id="Maxi Dress" />Maxi Dress <br />
+          <input type="checkbox" class="filter-checkboxes" id="Skirt" />Skirt <br />
+          <input type="checkbox" class="filter-checkboxes" id="Blouse" />Blouse <br />
+          <input type="checkbox" class="filter-checkboxes" id="Shirt" />Shirt <br />
+          <input type="checkbox" class="filter-checkboxes" id="T-shirt" />T-shirt <br />
+          <input type="checkbox" class="filter-checkboxes" id="Shorts" />Shorts <br />
+          <input type="checkbox" class="filter-checkboxes" id="Jacket" />Jacket <br />
+          <input type="checkbox" class="filter-checkboxes" id="Sweater" />Sweater <br />
+          <input type="checkbox" class="filter-checkboxes" id="Pants" />Pants <br />
         </div>
+        
         <hr />
         <div>
           <strong>BRAND</strong> <br />
-          <input type="checkbox" id="THE BEAR HOUSE" />THE
-          BEAR HOUSE <br />
-          <input type="checkbox" id="Park Avenue" />Park
-          Avenue <br />
-          <input type="checkbox" id="Raymond" />Raymond
+          <input type="checkbox" class="filter-checkboxes-brand" id="StyleCast x Revolte" />StyleCast x Revolte
+          <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="StyleCast" />StyleCast <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="Antheaa" />Antheaa <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="Mylo" />Mylo <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="aayu" />aayu <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="Monte Carlo" />Monte Carlo <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="BAESD" />BAESD <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="ADDYVERO" />ADDYVERO <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="SASSAFRAS" />SASSAFRAS <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="Anouk" />Anouk <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="SASSAFRAS BASICS" />SASSAFRAS BASICS <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="Berrylush" />Berrylush <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="Athena" />Athena <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="DRAPE AND DAZZLE" />DRAPE AND DAZZLE <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="BLANC9" />BLANC9 <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="DODO & MOA" />DODO & MOA <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="Bani Women" />Bani Women <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="Janasya" />Janasya <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="DressBerry" />DressBerry <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="Nayo" />Nayo <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="Miss Chase" />Miss Chase <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="Freehand by The Indian Garage" />Freehand
+          by The Indian Garage<br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="CURVE BY KASSUALLY" />CURVE BY KASSUALLY
+          <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="Pink Paprika by SASSAFRAS" />Pink Paprika
+          by SASSAFRAS <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="Mast & Harbour" />Mast & Harbour <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="PRETTY LOVING THING" />PRETTY LOVING THING
+          <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="AND" />AND <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="OCTICS" />OCTICS <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="Indo Era" />Indo Era <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="Tulsattva" />Tulsattva <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="FableStreet" />FableStreet <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="anayna" />anayna <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="GANT" />GANT <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="Tokyo Talkies" />Tokyo Talkies <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="Sera" />Sera <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="Aawari" />Aawari <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="Cottinfab" />Cottinfab <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="KALINI" />KALINI <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="Stylum" />Stylum <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="WISSTLER" />WISSTLER <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="SASSAFRAS worklyf" />SASSAFRAS worklyf
+          <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="AAHWAN" />AAHWAN <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="MABISH by Sonal Jain" />MABISH by Sonal
+          Jain <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="KASSUALLY" />KASSUALLY <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="Azira" />Azira <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="H&M" />H&M <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="Varanga" />Varanga <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="plusS" />plusS <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="SHAYE" />SHAYE <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="Athena Ample" />Athena Ample <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="Vishudh" />Vishudh <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="Kotty" />Kotty <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="Virgio" />Virgio <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="Tasarika" />Tasarika <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="AV2" />AV2 <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="KETCH" />KETCH <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="Styli" />Styli <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="Get Glamr" />Get Glamr <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="MINT STREET" />MINT STREET <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="Ahalyaa" />Ahalyaa <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="ANVI Be Yourself" />ANVI Be Yourself <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="COVER STORY" />COVER STORY <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="STREET 9" />STREET 9 <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="ENTELLUS" />ENTELLUS <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="NITVAN" />NITVAN <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="all about you" />all about you <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="SALT ATTIRE" />SALT ATTIRE <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="THE BEAR HOUSE" />THE BEAR HOUSE <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="Park Avenue" />Park Avenue <br />
+          <input type="checkbox" class="filter-checkboxes-brand" id="Raymond" />Raymond <br />
         </div>
+
         <hr />
         <div><strong>PRICE</strong></div>
         <select id="priceSort">

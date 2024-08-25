@@ -1,4 +1,4 @@
-import { tostTopEnd, tostBottomEnd, isUserLoggedin } from "../utils/utils.js";
+import { tostTopEnd, tostBottomEnd, isUserLoggedin,filter} from "../utils/utils.js";
 // user name show in navbar
 isUserLoggedin();
 
@@ -96,6 +96,20 @@ function displayProduct(data) {
   });
 }
 
+// mobile responsive filter
+let show=document.querySelector(".show-mobile-filter")
+let close=document.querySelector(".hide-mobile-filter")
+close.addEventListener("click",function(){
+  let filterPanel=document.querySelector(".filter")
+  filterPanel.style.display='none'
+  if(filterPanel.style.display=='none') close.style.display='none'
+})
+show.addEventListener("click",function(){
+  let filterPanel=document.querySelector(".filter")
+  close.style.display="flex"
+  filterPanel.style.display='flex'
+})
+
 function wishlist(element) {
   let arr = JSON.parse(localStorage.getItem("wishlist")) || [];
   arr.push(element);
@@ -136,3 +150,17 @@ document
 document.querySelector(".resetF").addEventListener("click", () => {
   displayProduct(bag);
 });
+
+
+let filterbutton = document.querySelectorAll(".filter-checkboxes-brand");
+
+for (let btn of filterbutton) {
+  btn.addEventListener("click", async (e) => {
+    let type = e.target.className.split("-")[2];
+    let brandName = e.target.id;
+    console.log(type, brandName);
+    let filterData = await filter(brandName, bag, type);
+    displayProduct(filterData);
+  });
+  console.log(btn);
+}
