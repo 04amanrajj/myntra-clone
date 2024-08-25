@@ -108,7 +108,7 @@ document.querySelector(".btn-apply").addEventListener("click", async () => {
 // Form submission handling
 let form = document.getElementById("form");
 form.style.display = "none";
-form.addEventListener("click", orderPlaced);
+form.addEventListener("submit", orderPlaced);
 
 // scroll to bottom, click on procced
 let button = document.querySelector(".Procced");
