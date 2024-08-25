@@ -98,16 +98,20 @@
   border: none;
   margin: 5px;
   /* border-radius: 0 4px 4px 0; */
-  background-color: #ff3f6c;
   font-weight: bolder;
-  color: white;
   cursor: pointer;
+  border: 2px solid #ff3f6c;
+  background-color: white;
+  color: #ff3f6c;
 }
 .filter > .resetF {
-  background-color: #007bff;
+  color: #0051ff;
+  border: 1px solid #007bff;
+  background-color: white;
 }
 
 .filter > button:hover {
+  color: white;
   background-color: #ff1149;
   transition: 500ms ease-in-out;
 }
@@ -138,7 +142,6 @@
   position: relative;
   overflow: hidden;
 }
-
 
 .products img {
   display: block;
@@ -198,6 +201,9 @@
   line-height: 1;
 }
 
+.mfilter {
+  display: none;
+}
 @media (max-width: 480px) {
   #Main {
     margin-top: 10px;
@@ -206,9 +212,38 @@
 
   .filter {
     margin: auto;
+    width: 90%;
     margin-bottom: 20px;
+    position: sticky;
     justify-content: center;
     display: none;
+    z-index: 100;
+  }
+
+  .mfilter {
+    justify-content: space-around;
+    display: flex;
+  }
+
+  .show-mobile-filter,
+  .hide-mobile-filter {
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    font-size: 1.5em;
+    font-weight: bolder;
+  }
+  .show-mobile-filter {
+    transition: 500ms ease-in-out;
+    color: white;
+    background-color: #007bff;
+  }
+
+  .hide-mobile-filter {
+    display: none;
+    justify-content: center;
   }
 
   .products {

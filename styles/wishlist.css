@@ -5,6 +5,7 @@
   padding: 25px;
   background-color: #ff3f6c;
   color: white;
+  font-size: 2.5em;
   border-radius: 0 30px 30px 0;
 }
 
@@ -13,25 +14,24 @@
   display: grid;
   margin: 10px;
   grid-template-columns: repeat(6, 1fr);
-  /* padding:  10px 0; */
 }
 
 .wishes div {
   display: flex;
   flex-direction: column;
   position: relative;
-  /* margin: auto; */
   margin-bottom: 10px;
-  /* border:1px solid #cecece; */
   background-color: #fff;
   transition: transform 1.3s ease;
   width: 220px;
   overflow: hidden;
 }
+
 .wishes div:hover .remove {
   opacity: 1;
   transition: 300ms ease-in;
 }
+
 .remove {
   opacity: 0;
   font-size: 16px;
@@ -41,7 +41,6 @@
   border: none;
   color: white;
   background-color: #c71a1a;
-  /* padding: 10px; */
   width: auto;
   min-width: 100%;
   justify-content: center;
@@ -56,20 +55,19 @@
   max-height: 280px;
   width: 100%;
   object-fit: cover;
-  /* position: relative; */
 }
+
 .wishes div:hover .remove {
   display: flex;
   opacity: 1;
 }
+
 .wishes div:hover img {
-  /* height: 220px; */
   object-fit: cover;
 }
+
 .button {
   z-index: 1;
-  /* height: 50px; */
-  /* position: absolute; */
   bottom: 0;
   font-size: 16px;
   font-weight: bolder;
@@ -97,61 +95,72 @@
   padding: 0 10px;
   font-size: 14px;
   color: #777;
-  /* margin: 0px 0; */
   line-height: 1;
   font-size: 12px;
 }
+
 @media (max-width: 1368px) {
   .wishes {
     padding: 0 100px 50px 100px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    /* padding:  10px 0; */
   }
+
   #main > h1 {
+    font-size: 2em;
     text-align: center;
     width: 350px;
-    padding: 25px;
+    padding: 10px;
     background-color: #ff3f6c;
     color: white;
     border-radius: 0 30px 30px 0;
   }
 }
+
 @media (max-width: 480px) {
   * {
     margin: 0;
   }
+
   .wishes {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     padding: 0px;
   }
+
   #main > h1 {
+    font-size: 2em;
+    margin-top: 0;
     width: auto;
     padding: 0;
     background-color: #ff3f6c;
     color: white;
     border-radius: 0;
   }
-.remove{
-  font-size: 14px;
-}
-  .button ,.remove{
-    padding: 10px;
-    /* margin: 0 10px; */
+
+  .remove {
+    font-size: 14px;
   }
+
+  .button,
+  .remove {
+    padding: 10px;
+  }
+
   .wishes img {
     max-height: 280px;
     width: 100%;
     object-fit: fill;
   }
+
   .wishes div:hover .remove {
     display: flex;
   }
+
   .wishes div:hover img {
-    /* height: 165px; */
     object-fit: cover;
   }
+
   .wishes div {
     width: 100%;
   }
