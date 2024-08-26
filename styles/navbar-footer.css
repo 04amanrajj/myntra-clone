@@ -193,7 +193,7 @@ hr {
   justify-content: space-between;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1366px) {
   #navbar input[type="text"] {
     width: auto;
   }
