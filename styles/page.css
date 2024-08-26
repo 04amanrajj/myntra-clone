@@ -5,6 +5,7 @@
 .slideshow {
   display: flex;
   opacity: 1;
+  height: 500px;
   max-height: 500px;
   min-height: 400px;
   overflow: hidden;
