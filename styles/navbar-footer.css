@@ -192,8 +192,27 @@ hr {
   display: flex;
   justify-content: space-between;
 }
-
 @media (max-width: 1366px) {
+  #navbar input[type="text"] {
+    width: auto;
+  }
+  .navBlock {
+    width: 150px;
+  }
+  #footer {
+    padding: 2% 10%;
+  }
+
+  .top-part {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .top-part div {
+    min-width: 100%;
+  }
+}
+@media (max-width: 1024px) {
   #navbar input[type="text"] {
     width: auto;
   }
