@@ -202,15 +202,6 @@ hr {
   #footer {
     padding: 2% 10%;
   }
-
-  .top-part {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .top-part div {
-    min-width: 100%;
-  }
 }
 @media (max-width: 1024px) {
   #navbar input[type="text"] {
@@ -224,16 +215,6 @@ hr {
   }
   .navv > p {
     display: none;
-    flex-direction: column;
-  }
-
-  .top-part {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .top-part div {
-    min-width: 100%;
   }
 }
 
@@ -247,7 +228,6 @@ hr {
   #navbar .right {
     margin-top: 10px;
   }
-
 
   #product {
     display: none;
@@ -290,8 +270,11 @@ hr {
     font-weight: bolder;
     display: none;
   }
-
-  #product {
+  .list-style {
+    list-style-type: none;
+  }
+  #product,
+  .top-part {
     display: none;
   }
   #navbar a,
@@ -306,9 +289,20 @@ hr {
   .popular {
     font-size: 1.2em;
   }
+  .popular + div {
+    text-align: justify;
+  }
+  .address {
+    flex-direction: column;
+    text-align: justify;
+  }
 
   #footer {
+    text-align: justify;
     padding: 10px;
+  }
+  .bottom > h1 {
+    font-size: 14px;
   }
 
   .navBlock li a {
