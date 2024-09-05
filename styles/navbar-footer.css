@@ -261,7 +261,7 @@ hr {
 
 @media (max-width: 480px) {
   .right i {
-    font-size: 30px;
+    font-size: 25px;
   }
   .right {
     display: flex;
