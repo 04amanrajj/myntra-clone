@@ -10,7 +10,7 @@ let bag = [];
 isUserLoggedin();
 
 document.querySelector("#product").addEventListener("input", search);
-// search funtion
+// search function
 function search() {
   let input = document.querySelector("#product").value;
   let newData = bag.filter((element) => {
@@ -121,6 +121,7 @@ show.addEventListener("click", function () {
 
 // wishlist
 function wishlist(element) {
+  console.log(element);
   let arr = JSON.parse(localStorage.getItem("wishlist")) || [];
   arr.push(element);
   localStorage.setItem("wishlist", JSON.stringify(arr));
@@ -184,5 +185,37 @@ for (let btn of filterbutton2) {
     let filterData = await filter(productName, bag, type);
     console.log(filterData);
     displayProduct(filterData);
+  });
+}
+
+// popup
+
+function showProductPopup(product) {
+  Swal.fire({
+    html: `
+    <img src="${product.imageUrl}" alt="" width=200px> <br>
+    <strong>${product.product} Details</strong>
+    <p>${product.brand}</p> <br>
+    <button class="popup-btn">Add to wishlist! </button>
+    `,
+    showConfirmButton: false,
+    showCloseButton: true,
+    focusConfirm: true,
+  });
+
+  document.querySelector(".popup-btn").addEventListener("click", () => {
+    wishlist(product);
+  });
+}
+
+let products = document.querySelectorAll(".products");
+
+for (let p of products) {
+  p.addEventListener("click", (e) => {
+    let element = e.target;
+    let productName = element.querySelector("h4").textContent;
+
+    let clickedProduct = bag.find((item) => item.product === productName);
+    showProductPopup(clickedProduct);
   });
 }
