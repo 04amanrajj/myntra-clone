@@ -3,6 +3,7 @@ import {
   tostBottomEnd,
   isUserLoggedin,
   filter,
+  showProductPopup,
 } from "../utils/utils.js";
 let bag = [];
 
@@ -56,53 +57,59 @@ function randomArray(array) {
 
 // display product
 function displayProduct(data) {
-  // console.log(data[0])
   document.querySelector(".products").innerHTML = "";
-  data.forEach((element) => {
-    // console.log(element);
-    let card = document.createElement("div");
+  if (data == "") {
+    document.querySelector(".products").innerHTML = `
+        <div class="icon">&#9888
+        <p>Data Not Avaliable</p>
+        </div>`;
+  } else {
+    data.forEach((element) => {
+      // console.log(element);
+      let card = document.createElement("div");
 
-    let img = document.createElement("img");
-    img.src = element.imageUrl;
+      let img = document.createElement("img");
+      img.src = element.imageUrl;
 
-    let product = document.createElement("h4");
-    product.textContent = element.product;
+      let product = document.createElement("h4");
+      product.textContent = element.product;
 
-    let brand = document.createElement("p");
-    brand.textContent = element.brand;
+      let brand = document.createElement("p");
+      brand.textContent = element.brand;
 
-    // line between strike
-    let price = document.createElement("div");
-    price.setAttribute("class", "pricep");
+      // line between strike
+      let price = document.createElement("div");
+      price.setAttribute("class", "pricep");
 
-    let strikePrice = document.createElement("span");
-    strikePrice.textContent = "Rs." + element.strike;
-    strikePrice.style.textDecoration = "line-through";
-    strikePrice.style.marginLeft = "5px";
-    strikePrice.style.color = "#666";
+      let strikePrice = document.createElement("span");
+      strikePrice.textContent = "Rs." + element.strike;
+      strikePrice.style.textDecoration = "line-through";
+      strikePrice.style.marginLeft = "5px";
+      strikePrice.style.color = "#666";
 
-    let discount = document.createElement("p");
-    discount.textContent = element.discountPercentage;
+      let discount = document.createElement("p");
+      discount.textContent = element.discountPercentage;
 
-    let discountedPrice = document.createElement("span");
-    discountedPrice.textContent = "Rs." + element.discountedPrice;
+      let discountedPrice = document.createElement("span");
+      discountedPrice.textContent = "Rs." + element.discountedPrice;
 
-    price.append(discountedPrice, strikePrice, discount);
+      price.append(discountedPrice, strikePrice, discount);
 
-    let wish = document.createElement("button");
-    wish.textContent = "Wishlist";
-    wish.addEventListener("click", () => {
-      wishlist(element);
+      let wish = document.createElement("button");
+      wish.textContent = "Wishlist";
+      wish.addEventListener("click", () => {
+        wishlist(element);
+      });
+      wish.setAttribute("class", "button");
+
+      card.append(img, wish, product, brand, price);
+      document.querySelector(".products").append(card);
+
+      // items counter display
+      let counter = document.querySelector(".counter");
+      counter.textContent = data.length + " items";
     });
-    wish.setAttribute("class", "button");
-
-    card.append(img, wish, product, brand, price);
-    document.querySelector(".products").append(card);
-
-    // items counter display
-    let counter = document.querySelector(".counter");
-    counter.textContent = data.length + " items";
-  });
+  }
 }
 
 // mobile responsive filter
@@ -190,32 +197,18 @@ for (let btn of filterbutton2) {
 
 // popup
 
-function showProductPopup(product) {
-  Swal.fire({
-    html: `
-    <img src="${product.imageUrl}" alt="" width=200px> <br>
-    <strong>${product.product} Details</strong>
-    <p>${product.brand}</p> <br>
-    <button class="popup-btn">Add to wishlist! </button>
-    `,
-    showConfirmButton: false,
-    showCloseButton: true,
-    focusConfirm: true,
-  });
-
-  document.querySelector(".popup-btn").addEventListener("click", () => {
-    wishlist(product);
-  });
-}
-
+//
 let products = document.querySelectorAll(".products");
 
 for (let p of products) {
   p.addEventListener("click", (e) => {
-    let element = e.target;
+    let element = e.target.closest("div");
     let productName = element.querySelector("h4").textContent;
 
     let clickedProduct = bag.find((item) => item.product === productName);
-    showProductPopup(clickedProduct);
+
+    if (clickedProduct) {
+      showProductPopup(clickedProduct);
+    }
   });
 }

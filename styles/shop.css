@@ -30,7 +30,7 @@
   display: flex;
   font-size: 1.25em;
   padding: auto;
-  margin: auto;
+  margin: 10px 60px;
 }
 .counter {
   color: #777;
@@ -42,27 +42,7 @@
   justify-content: space-evenly;
   margin: 0 auto 100px auto;
 }
-.popup {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1000;
-}
-/* Popup content box */
-.popup-content {
-  background-color: white;
-  padding: 20px;
-  margin: 100px auto;
-  width: 300px;
-  border-radius: 8px;
-  position: relative;
-}
 
-/* Close button styling */
 .close-btn {
   position: absolute;
   top: 10px;
@@ -225,7 +205,23 @@
   background-color: #f8154a;
 }
 
-.popup-btn{left: 9px;
+/* popup window */
+.popup-container {
+  display: flex;
+  justify-content: space-between;
+}
+.popup-left {
+  margin-right: 10px;
+}
+.popup-left img {
+  border-radius: 10px;
+}
+.popup-right{
+  font-size: 1.5rem;
+  text-align: left;
+}
+.popup-btn {
+  border-radius: 5px;
   font-weight: bolder;
   align-items: center;
   cursor: pointer;
@@ -233,7 +229,6 @@
   border: none;
   color: white;
   background-color: #ff3f6c;
-
 }
 
 .products h4 {
@@ -366,8 +361,39 @@
 
     /* margin: 10px 0 0 75px; */
   }
+  .popup-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  .popup-left {
+    margin-right: 10px;
+  }
+  .popup-left img {
+    width: 160px;
+    border-radius: 10px;
+  }
+  .popup-right{
+    font-size: .78rem;
+    text-align: left;
+  }
+
 }
 @media (max-width: 360px) {
+  .popup-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  .popup-left {
+    margin-right: 10px;
+  }
+  .popup-left img {
+    width: 160px;
+    border-radius: 10px;
+  }
+  .popup-right{
+    font-size: .9rem;
+    text-align: left;
+  }
   .mfilter {
     font-size: 1em;
     height: auto;

@@ -64,4 +64,42 @@ function redirect() {
   });
 }
 
-export { tostTopEnd, tostBottomEnd, filter, isUserLoggedin, redirect };
+function showProductPopup(product) {
+  Swal.fire({
+    html: `
+    <div class="popup-container">
+      <div class="popup-left">
+        <img src="${product.imageUrl}" alt="${product.product}">
+      </div>
+      <div class="popup-right">
+        <strong>Product:</strong> ${product.product} <br>
+        <strong>Brand:</strong> ${product.brand || "Local"} <br>
+        <strong>Gender:</strong> ${product.gender} <br>
+        <strong>Price:</strong> Rs. ${product.discountedPrice} <br>
+        <strong>Strike Price:</strong> Rs. ${product.strike} <br>
+        <strong>Discount:</strong> ${product.discountPercentage} <br>
+        <strong>Ratings:</strong> ${product.ratingsContainer || "N/A"} ⭐ (${
+      product.ratingsCount || "No reviews"
+    })<br><br>
+        <button class="popup-btn">Add to wishlist!</button>
+      </div>
+    </div>
+    `,
+    width: "auto",
+    showConfirmButton: false,
+    showCloseButton: false,
+    focusConfirm: true,
+  });
+
+  document.querySelector(".popup-btn").addEventListener("click", () => {
+    let arr = JSON.parse(localStorage.getItem("wishlist")) || [];
+  arr.push(product);
+  localStorage.setItem("wishlist", JSON.stringify(arr));
+  tostTopEnd.fire({
+    icon: "success",
+    title: "added to wishlist",
+  });
+  });
+}
+
+export { tostTopEnd, tostBottomEnd, filter, isUserLoggedin, redirect ,showProductPopup};

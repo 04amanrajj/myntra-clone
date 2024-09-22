@@ -3,6 +3,7 @@ import {
   tostBottomEnd,
   isUserLoggedin,
   filter,
+  showProductPopup,
 } from "../utils/utils.js";
 // user name show in navbar
 isUserLoggedin();
@@ -187,23 +188,6 @@ for (let btn of filterbutton2) {
 }
 
 // popup
-function showProductPopup(product) {
-  Swal.fire({
-    html: `
-    <img src="${product.imageUrl}" alt="" width=200px> <br>
-    <strong>${product.product} Details</strong>
-    <p>${product.brand}</p> <br>
-    <button class="popup-btn">Add to wishlist! </button>
-    `,
-    showConfirmButton: false,
-    showCloseButton: true,
-    focusConfirm: true,
-  });
-
-  document.querySelector(".popup-btn").addEventListener("click", () => {
-    wishlist(product);
-  });
-}
 
 let products = document.querySelectorAll(".products");
 
