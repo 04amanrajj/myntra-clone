@@ -288,7 +288,7 @@ hr {
   align-items: center;
 }
 
-.input{
+.input {
   width: 30px;
   text-align: center;
   border: none;
@@ -421,7 +421,11 @@ button {
     flex: 0;
     font-size: 11px;
   }
-  .input{
+  .input {
     width: 20px;
   }
+}
+
+* {
+  user-select: none;
 }
