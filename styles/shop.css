@@ -159,7 +159,7 @@
   grid-template-columns: repeat(5, 1fr);
   gap: 10px;
   width: 76%;
-  /* margin-bottom: 10%; */
+  margin-bottom: auto;
   overflow: scroll;
   scrollbar-width: none;
 }
