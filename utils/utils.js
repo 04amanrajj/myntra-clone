@@ -51,7 +51,7 @@ function isUserLoggedin() {
       let loginLink = document.querySelector(".user");
       if (loginLink) {
         loginLink.textContent = loggedInUser;
-        loginLink.style.display="flex"
+        loginLink.style.display = "flex";
       }
     }
   });
@@ -93,13 +93,33 @@ function showProductPopup(product) {
 
   document.querySelector(".popup-btn").addEventListener("click", () => {
     let arr = JSON.parse(localStorage.getItem("wishlist")) || [];
-  arr.push(product);
-  localStorage.setItem("wishlist", JSON.stringify(arr));
-  tostTopEnd.fire({
-    icon: "success",
-    title: "added to wishlist",
-  });
+    arr.push(product);
+    localStorage.setItem("wishlist", JSON.stringify(arr));
+    tostTopEnd.fire({
+      icon: "success",
+      title: "added to wishlist",
+    });
   });
 }
 
-export { tostTopEnd, tostBottomEnd, filter, isUserLoggedin, redirect ,showProductPopup};
+function linkTo() {
+  let location1 = "#mens-page+div a";
+  let location2 = "#womens-page+div a";
+
+  document.querySelectorAll(location1).forEach((ele) => {
+    ele.href = "/pages/men-item.html";
+  });
+  document.querySelectorAll(location2).forEach((ele) => {
+    ele.href = "/pages/women-item.html";
+  });
+}
+
+export {
+  tostTopEnd,
+  tostBottomEnd,
+  filter,
+  isUserLoggedin,
+  redirect,
+  showProductPopup,
+  linkTo,
+};
