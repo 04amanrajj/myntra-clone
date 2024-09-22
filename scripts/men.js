@@ -4,10 +4,12 @@ import {
   tostTopEnd,
   filter,
   showProductPopup,
+  linkTo
 } from "../utils/utils.js";
 let bag = [];
 // user name show in navbar
 isUserLoggedin();
+linkTo()
 
 document.querySelector("#product").addEventListener("input", search);
 

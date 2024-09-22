@@ -1,3 +1,8 @@
+// user name show in navbar
+import { redirect,isUserLoggedin,linkTo} from '../utils/utils.js';
+isUserLoggedin()
+redirect()
+linkTo()
 let images = [
   "../images/slideshow/women-page/1.jpeg",
   "../images/slideshow/women-page/2.jpg",
@@ -36,7 +41,7 @@ function slideshow(images) {
 
 slideshow(images);
 
-// redirect to mens page on img click
+// redirect to womens page on img click
 let bottomImages = document.querySelectorAll("#Main .bimgs");
 bottomImages.forEach((image) => {
   image.addEventListener(
@@ -46,8 +51,4 @@ bottomImages.forEach((image) => {
 });
 
 
-// user name show in navbar
-import { redirect,isUserLoggedin } from '../utils/utils.js';
-isUserLoggedin()
-redirect()
 

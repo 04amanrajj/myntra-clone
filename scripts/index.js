@@ -1,3 +1,8 @@
+import { isUserLoggedin ,linkTo } from "../utils/utils.js";
+// user name show in navbar
+isUserLoggedin();
+linkTo()
+
 let images = [
   "images/slideshow/homepage/Activewear_DK.jpg",
   "images/slideshow/homepage/Handbags_Desk.jpg",
@@ -42,10 +47,6 @@ bottomImages.forEach((image) => {
     () => (window.location.href = "./pages/shop.html")
   );
 });
-
-// user name show in navbar
-import { isUserLoggedin } from "../utils/utils.js";
-isUserLoggedin();
 
 // redirect to shop in input
 let input = document.querySelector("#product");

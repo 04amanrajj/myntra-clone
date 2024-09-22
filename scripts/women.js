@@ -4,9 +4,11 @@ import {
   isUserLoggedin,
   filter,
   showProductPopup,
+  linkTo
 } from "../utils/utils.js";
 // user name show in navbar
 isUserLoggedin();
+linkTo()
 
 let bag = [];
 

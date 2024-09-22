@@ -1,3 +1,9 @@
+// user name show in navbar
+import { redirect, isUserLoggedin, linkTo } from "../utils/utils.js";
+isUserLoggedin();
+redirect();
+linkTo()
+
 let images = [
   "../images/slideshow/men-page/Workwear_Desk.jpg",
   "../images/slideshow/men-page/Sports-Shoes_Desk2.jpg",
@@ -45,8 +51,3 @@ bottomImages.forEach((image) => {
   );
 });
 
-
-// user name show in navbar
-import { redirect,isUserLoggedin } from '../utils/utils.js';
-isUserLoggedin()
-redirect()

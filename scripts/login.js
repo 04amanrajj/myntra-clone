@@ -1,3 +1,9 @@
+// user name show in navbar
+import { redirect,isUserLoggedin,linkTo } from '../utils/utils.js';
+isUserLoggedin()
+redirect()
+linkTo()
+
 let form = document.querySelector("form");
 form.addEventListener("submit", login);
 let arr = JSON.parse(localStorage.getItem("users")) || [];
@@ -49,7 +55,3 @@ function login(event) {
     }, 3000);
   }
 }
-// user name show in navbar
-import { redirect,isUserLoggedin } from '../utils/utils.js';
-isUserLoggedin()
-redirect()
