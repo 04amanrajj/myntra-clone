@@ -1,22 +1,30 @@
-import { tostTopEnd, redirect, isUserLoggedin, linkTo } from "../utils/utils.js";
+import {
+  tostTopEnd,
+  redirect,
+  isUserLoggedin,
+  linkTo,
+} from "../utils/utils.js";
 
 isUserLoggedin();
 redirect();
-linkTo()
+linkTo();
 
 let data = JSON.parse(localStorage.getItem("wishlist")) || [];
 let bigDiv = document.querySelector(".wishes");
-
 
 if (data.length != 0) displayWish(data);
 else {
   Swal.fire({
     icon: "question",
     title: "You have no wishes?",
-    text: "Go get some wish!",
+    text: "Go wish for something!",
     footer: '<a href="men-page.html">Home Page</a>',
+    confirmButtonText: "I will",
+    allowOutsideClick: false,
   });
-  //   window.location.href = "men-page.html";
+  setTimeout(() => {
+    window.location.href = "shop.html";
+  }, 3000);
 }
 
 function displayWish(data) {
@@ -93,4 +101,3 @@ function removes(i) {
     title: "Wish is vanished XD",
   });
 }
-

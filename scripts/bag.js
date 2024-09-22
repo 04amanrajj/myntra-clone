@@ -1,3 +1,5 @@
+import { tostTopEnd } from "../utils/utils.js";
+
 let bag = JSON.parse(localStorage.getItem("bag")) || [];
 let total = 0;
 let total2 = 0;
@@ -11,60 +13,108 @@ let displayTotal = document.querySelector("#total");
 
 // Function to display receipt and calculate totals
 function displayRecipt(bag) {
+  if (bag.length == 0) kick();
   productClass.innerHTML = "";
 
   total = 0;
   total2 = 0;
 
   bag.forEach((element, i) => {
-    let imgDiv = document.createElement("div");
+    element.quantity = element.quantity || 1;
+    productClass.innerHTML += `
+      <div class="outter">
+  <div class="left-div">
+    <img src="${element.imageUrl}" />
+  </div>
+  <div class="right-div">
+    <div class="up-div">
+      <h2>${element.product}</h2>
+    </div>
+    <div class="down-div">
+      <div class="down-left">
+        <p>Brand - ${element.brand || "Local"}</p>
+        <p>${element.quantity} items in bag</p>
+        <p>Rs.${(element.discountedPrice * element.quantity).toFixed( 2 )}</p>
+      </div>
+      <div class="down-right">
+        <div>
+          <span class="minus" data-index="${i}">-</span>
+          <input class="input" type="text" value="${element.quantity}" readonly />
+          <span class="plus" data-index="${i}">+</span>
+        </div>
+        <button class="del">Remove</button>
+      </div>
+    </div>
+  </div>
+</div>
+    `;
 
-    let img = document.createElement("img");
-    img.src = element.imageUrl;
-    imgDiv.append(img);
-
-    let description = document.createElement("div");
-
-    let productName = document.createElement("h2");
-    productName.textContent = element.product;
-    description.append(productName);
-
-    let brand = document.createElement("p");
-    brand.textContent = element.brand;
-    description.append(brand);
-
-    let price = document.createElement("p");
-    price.textContent = "Rs." + element.discountedPrice;
-    description.append(price);
-
-    let del = document.createElement("button");
-    del.textContent = "Remove";
-    del.setAttribute("class", "del");
-    del.addEventListener("click", () => removes(i));
-
-    let product = document.createElement("div");
-    product.append(imgDiv, description);
-    let itemsrow = document.createElement("div");
-    itemsrow.append(product, del);
-    productClass.append(itemsrow);
-
-    total += Number(element.discountedPrice);
-    total2 += Number(element.strike);
+    total += element.discountedPrice * element.quantity;
+    total2 += element.strike * element.quantity;
   });
 
-  bill(); // Recalculate totals
+  addEventListenersToButtons();
+
+  let delButton = document.querySelectorAll(".del");
+  delButton.forEach((btn, i) => {
+    btn.addEventListener("click", () => {
+      removes(i);
+    });
+  });
+  bill();
 }
 
 function bill() {
   document.querySelector(".counter").textContent = "(" + bag.length + " items)";
-
-  displayTotal.textContent = "Rs." + total + " Only";
-  totalMrp.textContent = "Rs." + total2;
+  displayTotal.textContent = "Rs." + total.toFixed(2) + " Only";
+  totalMrp.textContent = "Rs." + total2.toFixed(2);
   discountMrp.textContent = "Rs." + (total2 - total).toFixed(2);
   couponDiscount.textContent = "Rs." + 0;
-  totalAmount.textContent = "Rs." + total;
+  totalAmount.textContent = "Rs." + total.toFixed(2);
 }
 
+// adding event listeners to plus and minus buttons
+function addEventListenersToButtons() {
+  let plusButton = document.querySelectorAll(".plus");
+  let minusButton = document.querySelectorAll(".minus");
+
+  plusButton.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      let index = e.target.getAttribute("data-index");
+      bag[index].quantity++;
+      localStorage.setItem("bag", JSON.stringify(bag));
+      displayRecipt(bag);
+    });
+  });
+
+  minusButton.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      let index = e.target.getAttribute("data-index");
+      if (bag[index].quantity > 1) {
+        bag[index].quantity--;
+        localStorage.setItem("bag", JSON.stringify(bag));
+        displayRecipt(bag);
+      }
+    });
+  });
+}
+
+// initial display call
+displayRecipt(bag);
+
+// function to remove item from the bag
+function removes(i) {
+  let arr = JSON.parse(localStorage.getItem("bag")) || [];
+  arr.splice(i, 1);
+  localStorage.setItem("bag", JSON.stringify(arr));
+  bag = arr;
+  displayRecipt(bag);
+
+  tostTopEnd.fire({
+    icon: "success",
+    title: "Item removed",
+  });
+}
 // Coupon code application
 document.querySelector(".btn-apply").addEventListener("click", async () => {
   const { value: formValues } = await Swal.fire({
@@ -89,8 +139,9 @@ document.querySelector(".btn-apply").addEventListener("click", async () => {
   if (formValues == "aman30") {
     let temp = total;
     total *= 0.7;
-    displayTotal.textContent = "Rs." + total.toFixed(0); + " Only";
-    totalAmount.textContent = "Rs." + total.toFixed(0);;
+    displayTotal.textContent = "Rs." + total.toFixed(0);
+    +" Only";
+    totalAmount.textContent = "Rs." + total.toFixed(0);
     couponDiscount.textContent = "Rs." + (temp - total).toFixed(0);
 
     tostTopEnd.fire({
@@ -113,7 +164,7 @@ form.addEventListener("submit", orderPlaced);
 // scroll to bottom, click on procced
 let button = document.querySelector(".Procced");
 button.addEventListener("click", () => {
-  form.style.display = "flex";
+  form.style.display = "block";
   window.scrollTo({
     top: document.body.scrollHeight,
     behavior: "smooth",
@@ -140,30 +191,38 @@ function orderPlaced(e) {
       clearInterval(timerInterval);
     },
   }).then((result) => {
-    /* Read more about handling dismissals below */
     if (result.dismiss === Swal.DismissReason.timer) {
       Swal.fire({
         icon: "success",
         title: "Order Placed",
       });
+      Swal.fire({
+        icon: "info",
+        title: "Thanks you Purchase",
+        showConfirmButton: true,
+        allowOutsideClick: false,
+      });
+      setTimeout(() => {
+        localStorage.removeItem("bag");
+        bag = "";
+        displayRecipt(bag);
+      }, 3000);
     }
   });
 }
-
-// Function to remove item from the bag
-function removes(i) {
-  let arr = JSON.parse(localStorage.getItem("bag")) || [];
-  arr.splice(i, 1);
-  localStorage.setItem("bag", JSON.stringify(arr));
-  bag = arr; // Update the global bag variable
-  displayRecipt(bag);
-  tostTopEnd.fire({
-    icon: "success",
-    title: "Item removed",
-  });
-}
-
-// Initial display of the receipt
 displayRecipt(bag);
 
-import { tostTopEnd } from "../utils/utils.js";
+function kick() {
+  Swal.fire({
+    icon: "info",
+    title: "You bag is empty",
+    text: "Redirecting to home...",
+    timer: 3000,
+    showConfirmButton: false,
+    timerProgressBar: true,
+    allowOutsideClick: false,
+  });
+  setTimeout(() => {
+    window.location.href = "shop.html";
+  }, 3000);
+}

@@ -15,10 +15,6 @@ const tostTopEnd = Swal.mixin({
   showConfirmButton: false,
   timer: 2000,
   timerProgressBar: false,
-  didOpen: (toast) => {
-    toast.onmouseenter = Swal.stopTimer;
-    toast.onmouseleave = Swal.resumeTimer;
-  },
 });
 
 const tostBottomEnd = Swal.mixin({
@@ -27,10 +23,6 @@ const tostBottomEnd = Swal.mixin({
   showConfirmButton: false,
   timer: 3000,
   timerProgressBar: true,
-  didOpen: (toast) => {
-    toast.onmouseenter = Swal.stopTimer;
-    toast.onmouseleave = Swal.resumeTimer;
-  },
 });
 
 // authantication

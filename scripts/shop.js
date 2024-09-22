@@ -204,7 +204,7 @@ let products = document.querySelectorAll(".products");
 
 for (let p of products) {
   p.addEventListener("click", (e) => {
-    let element = e.target.closest("div");
+    let element = e.target
     let productName = element.querySelector("h4").textContent;
 
     let clickedProduct = bag.find((item) => item.product === productName);
