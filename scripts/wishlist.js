@@ -1,11 +1,9 @@
 import {
   tostTopEnd,
   redirect,
-  isUserLoggedin,
   linkTo,
 } from "../utils/utils.js";
 
-isUserLoggedin();
 redirect();
 linkTo();
 
