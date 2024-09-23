@@ -1,11 +1,27 @@
 import {
   tostTopEnd,
   redirect,
-  linkTo,
+  linkTo
 } from "../utils/utils.js";
 
 redirect();
 linkTo();
+isUserLoggedin()
+function isUserLoggedin(){
+  document.addEventListener("DOMContentLoaded", function () {
+    let loggedInUser = localStorage.getItem("loggedInUser");
+    let savedUser = localStorage.getItem("loggedInUser");
+    // console.log(savedUser);
+
+    if (loggedInUser) {
+      let loginLink = document.querySelector(".user");
+      if (loginLink) {
+        loginLink.textContent = loggedInUser;
+        loginLink.style.display = "flex";
+      }
+    }
+  });
+}
 
 let data = JSON.parse(localStorage.getItem("wishlist")) || [];
 let bigDiv = document.querySelector(".wishes");
