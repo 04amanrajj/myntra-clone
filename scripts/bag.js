@@ -34,12 +34,14 @@ function displayRecipt(bag) {
       <div class="down-left">
         <p>Brand - ${element.brand || "Local"}</p>
         <p>${element.quantity} items in bag</p>
-        <p>Rs.${(element.discountedPrice * element.quantity).toFixed( 2 )}</p>
+        <p>Rs.${(element.discountedPrice * element.quantity).toFixed(2)}</p>
       </div>
       <div class="down-right">
         <div>
           <span class="minus" data-index="${i}">-</span>
-          <input class="input" type="text" value="${element.quantity}" readonly />
+          <input class="input" type="text" value="${
+            element.quantity
+          }" readonly />
           <span class="plus" data-index="${i}">+</span>
         </div>
         <button class="del">Remove</button>
@@ -70,7 +72,15 @@ function bill() {
   totalMrp.textContent = "Rs." + total2.toFixed(2);
   discountMrp.textContent = "Rs." + (total2 - total).toFixed(2);
   couponDiscount.textContent = "Rs." + 0;
-  totalAmount.textContent = "Rs." + total.toFixed(2);
+  if (total >= 1000) {
+    document.querySelector(".shipping-fee").textContent = "Rs." + 100;
+    total += 100;
+    totalAmount.textContent = "Rs." + total.toFixed(2);
+  } else {
+    totalAmount.textContent = "Rs." + total.toFixed(2);
+    document.querySelector(".shipping-fee").textContent =
+      "Free below Rs.1000";
+  }
 }
 
 // adding event listeners to plus and minus buttons
