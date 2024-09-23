@@ -78,8 +78,7 @@ function bill() {
     totalAmount.textContent = "Rs." + total.toFixed(2);
   } else {
     totalAmount.textContent = "Rs." + total.toFixed(2);
-    document.querySelector(".shipping-fee").textContent =
-      "Free below Rs.1000";
+    document.querySelector(".shipping-fee").textContent = "Free below Rs.1000";
   }
 }
 
@@ -206,17 +205,19 @@ function orderPlaced(e) {
         icon: "success",
         title: "Order Placed",
       });
-      Swal.fire({
-        icon: "info",
-        title: "Thanks you Purchase",
-        showConfirmButton: true,
-        allowOutsideClick: false,
-      });
+      setTimeout(() => {
+        Swal.fire({
+          icon: "info",
+          title: "Thank you for your purchase!",
+          showConfirmButton: true,
+          allowOutsideClick: false,
+        });
+      }, 3000);
       setTimeout(() => {
         localStorage.removeItem("bag");
         bag = "";
         displayRecipt(bag);
-      }, 3000);
+      }, 6000);
     }
   });
 }

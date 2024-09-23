@@ -16,7 +16,6 @@ else {
     icon: "question",
     title: "You have no wishes?",
     text: "Go wish for something!",
-    footer: '<a href="men-page.html">Home Page</a>',
     confirmButtonText: "I will",
     allowOutsideClick: false,
   });
